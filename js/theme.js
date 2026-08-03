@@ -12,7 +12,7 @@ function updatePositionToTheme() {
 	allElements.forEach(element => {
 		element.style.colorScheme = theme;
 	});
-	
+
 	let themeSelector = document.getElementById('themeSelector');
 	themeSelector.style.transform = (theme == 'dark') ? 'translateX(0px)' : 'translateX(50px)';
 }

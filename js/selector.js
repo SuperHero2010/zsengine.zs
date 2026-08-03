@@ -187,7 +187,7 @@ function createSidebarContent(prefix) {
 		'openCustomSubstate': 'substate.html',
 		'closeCustomSubstate': 'substate.html',
 		'insertToCustomSubstate': 'substate.html',
-		
+
 		// Discord
 		'changeDiscordPresence': 'discord.html',
 		'changeDiscordClientID': 'discord.html',

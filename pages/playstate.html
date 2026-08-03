@@ -45,7 +45,7 @@
 			<p>Starts the countdown, should be used after finishing your Pre-Song Cutscene.</p>
 			<p class="methodbox">ZS syntax: start countdown</p>
 			<hr>
-			
+
 			<h2 id="endSong">endSong</h2>
 			<p class="methodbox">Usage: <b>endSong()</b></p>
 			<p>Ends the song, can be cancelled through the Lua/HScript/ZS callback "onEndSong" to make cutscenes.</p>
@@ -57,7 +57,7 @@
 			<p>Returns the current song position, in milliseconds.</p>
 			<p class="methodbox">ZS syntax: read songPosition</p>
 			<hr>
-			
+
 			<h2 id="restartSong">restartSong</h2>
 			<p class="methodbox">restartSong(<span class="isoptional">?</span><span class="variablemarkup">skipTransition</span>:Bool = false):Void</p>
 			<p>Restarts the Song, pretty self explanatory.</p>
@@ -66,7 +66,7 @@
 			</ul>
 			<p class="methodbox">ZS syntax: restart song with [boolean]</p>
 			<hr>
-			
+
 			<h2 id="exitSong">exitSong</h2>
 			<p class="methodbox">exitSong(<span class="isoptional">?</span><span class="variablemarkup">skipTransition</span>:Bool = false):Void</p>
 			<p>Quits the Song and goes back to Freeplay/Story Mode based on where you started.</p>
@@ -75,7 +75,7 @@
 			</ul>
 			<p class="methodbox">ZS syntax: exit song with [boolean]</p>
 			<hr>
-			
+
 			<h2 id="loadSong">loadSong</h2>
 			<p class="methodbox">loadSong(<span class="isoptional">?</span><span class="variablemarkup">name</span>:String = null, <span class="isoptional">?</span><span class="variablemarkup">difficultyNum</span>:Int = -1):Void</p>
 			<p>Loads the chart for a song.</p>
@@ -85,7 +85,7 @@
 			</ul>
 			<p class="methodbox">ZS syntax: load song “song” with difficulty [number]</p>
 			<hr>
-			
+
 			<h2 id="triggerEvent">triggerEvent</h2>
 			<p class="methodbox">triggerEvent(<span class="variablemarkup">name</span>:String, <span class="isoptional">?</span><span class="variablemarkup">value1</span>:String = '', <span class="isoptional">?</span><span class="variablemarkup">value2</span>:String = ''):Bool</p>
 			<p>Calls an event and uses two arguments for it, exactly like the Chart Editor does.
@@ -114,7 +114,7 @@
 				<li class="exampleitem"><span class="methodexample">setHealthBarColors('FF0000', '00FF00')</span> - Makes left side red and right side lime.</li>
 				<li class="exampleitem"><span class="methodexample">setHealthBarColors('red', 'lime')</span> - Same as above, but using color names.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change <> color to “left” and “right” (put the "healthBar" to the noun)</p>
+			<p class="methodbox">ZS syntax: change &lt;healthBar&gt; color to “left” and “right”</p>
 			<hr>
 
 			<h2 id="setTimeBarColors">setTimeBarColors</h2>
@@ -129,7 +129,7 @@
 				<li class="exampleitem"><span class="methodexample">setTimeBarColors('FF0000', '00FF00')</span> - Makes left side red and right side lime.</li>
 				<li class="exampleitem"><span class="methodexample">setTimeBarColors('red', 'lime')</span> - Same as above, but using color names.</li>
 			</ul>
-			<p class="methodbox">change <> color to “left” and “right” (put the "timeBar" to the noun)</p>
+			<p class="methodbox">ZS syntax: change &lt;timeBar&gt; color to “left” and “right”</p>
 			<hr>
 
 			<h2 id="startDialogue">startDialogue</h2>
