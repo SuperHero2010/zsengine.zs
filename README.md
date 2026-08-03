@@ -1,4 +1,4 @@
-# Psych Engine Lua Script API
+# ZS Engine ZS Script API
  
 ## Special Thanks to Contributors
 * LarryFrost - Pointing out countless errors in the Wiki.
