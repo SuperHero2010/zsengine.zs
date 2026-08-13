@@ -58,6 +58,7 @@
 				<li class="exampleitem"><span class="methodexample">makeLuaSprite('mySprite', 'myStage/myImage')</span> - Create a Lua Sprite with tag "mySprite" displaying image <span class="methodexample">mods/My-Mod/images/myStage/myImage.png</span>.</li>
 			</ul>
 			<p style="color: gray">Note: You will still have to add the Lua Sprite to the scene with <a href="#addLuaSprite">addLuaSprite</a> or it won't be visible.</p>
+			<p class="methodbox">ZS syntax: create sprite &lt;tag&gt; path “image” with position [x] and [y]</p>
 			<hr>
 
 			<h2 id="makeAnimatedLuaSprite">makeAnimatedLuaSprite</h2>
@@ -81,6 +82,7 @@
 			</ul>
 			<p style="color: gray">Note: You will still have to add the Lua Sprite to the scene with <a href="#addLuaSprite">addLuaSprite</a> or it won't be visible.</p>
 			<p style="color: gray">Note 2: <a href="https://github.com/ShadowMario/FNF-PsychEngine/wiki/Export-and-Import-from-Aseprite">Follow these instructions to export properly from Aseprite</a>.</p>
+			<p class="methodbox">ZS syntax: create animated sprite &lt;tag&gt; path “image” with position [x] and [y] type “type”</p>
 			<hr>
 
 			<h2 id="makeGraphic">makeGraphic</h2>
@@ -100,6 +102,7 @@
 				<li class="exampleitem"><span class="methodexample">makeGraphic('mySprite', 500, 500, 'FF0000')</span> - Turns Lua Sprite with tag "mySprite" into a 500x500 red square.</li>
 				<li class="exampleitem"><span class="methodexample">makeGraphic('mySprite', 1000, 200, 'green')</span> - Turns Lua Sprite with tag "mySprite" into a 1000x200 green square.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: create graphic &lt;tag&gt; with size [x] and [y] color “color”</p>
 			<hr>
 
 			<h2 id="loadGraphic">loadGraphic</h2>
@@ -119,6 +122,7 @@
 				<li class="exampleitem"><span class="methodexample">loadGraphic('mySprite', 'funkay')</span> - Sets graphic of the Lua Sprite named "mySprite" to <span class="methodexample">assets/shared/images/funkay.png</span>.</li>
 				<li class="exampleitem"><span class="methodexample">loadGraphic('mySprite', 'icons/icon-bf', 150, 150)</span> - Loads BF's Health Icon sprite on a Lua Sprite as a 150x150 grid.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: load graphic &lt;tag&gt; path “image” with grid [x] and [y]</p>
 			<hr>
 
 			<h2 id="loadFrames">loadFrames</h2>
@@ -137,6 +141,7 @@
 				<li class="exampleitem"><span class="methodexample">loadFrames('mySprite', 'aseprite-test', 'aseprite')</span> - Loads <span class="methodexample">mods/My-Mod/images/aseprite-test</span>, using its .PNG and .JSON files.</li>
 			</ul>
 			<p style="color: gray">Note: <a href="https://github.com/ShadowMario/FNF-PsychEngine/wiki/Export-and-Import-from-Aseprite">Follow these instructions to export properly from Aseprite</a>.</p>
+			<p class="methodbox">ZS syntax: load frame &lt;tag&gt; path “image” type “type”</p>
 			<hr>
 
 			<h2 id="loadMultipleFrames">loadMultipleFrames</h2>
@@ -152,6 +157,7 @@
 				<li class="exampleitem"><span class="methodexample">loadMultipleFrames('mySprite', {'spritesheet1', 'spritesheet2', 'spritesheet3'})</span> - Loads 3 spritesheets in a single Lua Sprite named "mySprite".</li>
 				<li class="exampleitem"><a href="https://pastebin.com/raw/GTTkxV2R">Click here for a detailed use explanation.</a></li>
 			</ul>
+			<p class="methodbox">ZS syntax: load frame &lt;tag&gt; with {}</p>
 			<hr>
 
 			<h2 id="addAnimationByPrefix">addAnimationByPrefix</h2>
@@ -174,6 +180,7 @@
 				<li class="exampleitem"><span class="methodexample">addAnimationByPrefix('mySprite', 'idle', 'Test Anim Idle')</span> - Adds an animation named "idle", symbol is named "Test Anim Idle" on Animate, running at 24 FPS and loop disabled.</li>
 				<li class="exampleitem"><span class="methodexample">addAnimationByPrefix('mySprite', 'spin', 'Test Spin', 30, true)</span> - Adds an animation named "spin", symbol is named "Test Spin" on Animate, running at 30 FPS and loop enabled.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add animation &lt;tag&gt; name “name” by prefix “prefix” rate [number] with [boolean]</p>
 			<hr>
 
 			<h2 id="addAnimationByIndices">addAnimationByIndices</h2>
@@ -198,6 +205,7 @@
 				<li class="exampleitem"><span class="methodexample">addAnimationByIndices('mySprite', 'idle', 'Test Anim Idle', '0, 1, 2, 3, 4, 5, 6, 7')</span> - Adds "idle" using string indices.</li>
 				<li class="exampleitem"><span class="methodexample">addAnimationByIndices('mySprite', 'idle', 'Test Anim Idle', {0, 1, 2, 3, 4, 5, 6, 7})</span> - Adds "idle" using table indices.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add animation &lt;tag&gt; name “name” by indices [number/table] prefix “prefix” rate [number] with [boolean]</p>
 			<hr>
 
 			<h2 id="addAnimation">addAnimation</h2>
@@ -220,6 +228,7 @@
 				<li class="exampleitem"><span class="methodexample">addAnimation('mySprite', 'idle', '0, 1, 2')</span> - Adds "idle" using string indices.</li>
 				<li class="exampleitem"><span class="methodexample">addAnimation('mySprite', 'idle', {0, 1, 2})</span> - Adds "idle" using table indices.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add animation &lt;tag&gt; name “name” with frames [number] rate [number] with [boolean]</p>
 			<hr>
 
 			<h2 id="addOffset">addOffset</h2>
@@ -239,6 +248,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">addOffset('mySprite', 'idle', 50, 38)</span> - Add offsets (X: 50, Y: 38) to "idle" animation.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add offset to sprite &lt;tag&gt; name “name” with [x] and [y]</p>
 			<hr>
 
 			<h2 id="playAnim">playAnim</h2>
@@ -260,6 +270,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">playAnim('mySprite', 'idle', true)</span> - Forces "mySprite" to play the "idle" animation.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: play animation &lt;tag&gt; name “name” start [number] with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="addLuaSprite">addLuaSprite</h2>
@@ -273,6 +284,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">addLuaSprite('mySprite', true)</span> - Adds a Lua Sprite with the tag "mySprite" at the top of everything.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add sprite &lt;tag&gt; with [boolean]</p>
 			<hr>
 
 			<h2 id="removeLuaSprite">removeLuaSprite</h2>
@@ -287,6 +299,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">removeLuaSprite('mySprite')</span> - Removes the Lua Sprite with the tag "mySprite".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: remove sprite &lt;tag&gt; from “group” with [boolean]</p>
 			<hr>
 
 			<h2 id="luaSpriteExists">luaSpriteExists</h2>
@@ -295,6 +308,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sprite nametag.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: sprite &lt;tag&gt; exists</p>
 		</div>
 	</body>
 </html>

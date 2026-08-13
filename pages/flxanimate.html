@@ -54,6 +54,7 @@
 				<li class="exampleitem"><span class="methodexample">makeFlxAnimateSprite('mySprite')</span> - Creates an Atlas sprite with no Animate Atlas loaded, which can be loaded later on with <a href="#loadAnimateAtlas">"loadAnimateAtlas"</a>.</li>
 				<li class="exampleitem"><span class="methodexample">makeFlxAnimateSprite('mySprite', 500, 300, 'characters/atlasTest')</span> - Loads the Atlas folder <span class="methodexample">mods/My-Mod/images/characters/atlasTest</span>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: create Flixel animate sprite &lt;tag&gt; with position [x] and [y] path “path”</p>
 			<hr>
 
 			<h2 id="loadAnimateAtlas">loadAnimateAtlas</h2>
@@ -70,6 +71,7 @@
 				<li class="exampleitem"><span class="methodexample">loadAnimateAtlas('mySprite', 'characters/atlasTest')</span> - Loads the Atlas folder <span class="methodexample">mods/My-Mod/images/characters/atlasTest</span>.</li>
 				<li class="exampleitem"><span class="methodexample">loadAnimateAtlas('mySprite', 'characters/atlasTest/spritemap1', 'characters/atlasTest/spritemap1', 'characters/atlasTest/Animation')</span> - This will load the following Animate Atlas files consecutively: <span class="methodexample">mods/My-Mod/images/characters/spritemap1.png</span>,  <span class="methodexample">mods/My-Mod/images/characters/spritemap1.json</span>, <span class="methodexample">mods/My-Mod/images/characters/Animation.json</span>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: load atlas sprite &lt;tag&gt; path “path” sprite path “jsonPath” animation path “jsonPath”</p>
 			<hr>
 
 			<h2 id="addAnimationBySymbol">addAnimationBySymbol</h2>
@@ -89,6 +91,7 @@
 				<li class="exampleitem"><span class="methodexample">addAnimationBySymbol('mySprite', 'idle', 'Test Anim Idle')</span> - Adds an animation named "idle", symbol is named "Test Anim Idle" on Animate, running at 24 FPS and loop disabled.</li>
 				<li class="exampleitem"><span class="methodexample">addAnimationBySymbol('mySprite', 'spin', 'Test Spin', 30, true)</span> - Adds an animation named "spin", symbol is named "Test Spin" on Animate, running at 30 FPS and loop enabled.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add animation &lt;tag&gt; name “name” by symbol “symbol” rate [number] with [boolean] matrix [x] and [y]</p>
 			<hr>
 
 			<h2 id="addAnimationBySymbolIndices">addAnimationBySymbolIndices</h2>
@@ -109,5 +112,6 @@
 				<li class="exampleitem"><span class="methodexample">addAnimationBySymbolIndices('mySprite', 'idle', 'Test Anim Idle', '0, 1, 2, 3, 4, 5, 6, 7')</span> - Adds "idle" using string indices.</li>
 				<li class="exampleitem"><span class="methodexample">addAnimationBySymbolIndices('mySprite', 'idle', 'Test Anim Idle', {0, 1, 2, 3, 4, 5, 6, 7})</span> - Adds "idle" using table indices.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add animation &lt;tag&gt; name “name” by symbol “symbol” and indicies [number/table] rate [number] with [boolean] matrix [x] and [y]</p>
 	</body>
 </html>

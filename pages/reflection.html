@@ -71,7 +71,7 @@
 				<li class="exampleitem"><span class="methodexample">getPropertyFromGroup('playerStrums', 1, 'animation.curAnim.name')</span> - Will return the current animation name of the Player's Down Note.</li>
 				<li class="exampleitem"><span class="methodexample">getPropertyFromGroup('unspawnNotes', 0, 'extraData.testVar', true)</span> - Lua equivalent of <b>unspawnNotes[0].extraData.get('testVar')</b>.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: read from group “variable” at 1 property “property” with [boolean]</p>
+			<p class="methodbox">ZS syntax: read from group “variable” at [index] property “property” with [boolean]</p>
 			<hr>
 
 			<h2 id="getPropertyFromClass">getPropertyFromClass</h2>
@@ -133,7 +133,7 @@
 				<li class="exampleitem"><span class="methodexample">setPropertyFromGroup('playerStrums', 2, 'visible', false)</span> - Hides Player's Up note.</li>
 				<li class="exampleitem"><span class="methodexample">setPropertyFromGroup('unspawnNotes', 0, 'extraData.testVar', true, true)</span> - Lua equivalent of <b>unspawnNotes[0].extraData.set('testVar', true)</b>.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change in group “variable” at 1 property “property” to 0.5 with [boolean] and [boolean]</p>
+			<p class="methodbox">ZS syntax: change in group “variable” at [index] property “property” to 0.5 with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="setPropertyFromClass">setPropertyFromClass</h2>
@@ -266,7 +266,7 @@
 				<li class="exampleitem"><span class="methodexample">setObjectOrder('boyfriendGroup', getObjectOrder('gfGroup'))</span> - Sets the Player's Character Group to be a layer behind Girlfriend.</li>
 				<li class="exampleitem"><span class="methodexample">setObjectOrder('iconP1', 0, 'uiGroup')</span> - Makes Player Icon a layer behind everything else.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change in order of “tag” to 1 with “group”</p>
+			<p class="methodbox">ZS syntax: change in order of “tag” to [index] with “group”</p>
 			<hr>
 
 			<h2 id="addToGroup">addToGroup</h2>
@@ -282,7 +282,7 @@
 				<li class="exampleitem"><span class="methodexample">addToGroup('uiGroup', 'mySprite')</span> - Adds Lua Object "mySprite" to the top of UI Group.</li>
 				<li class="exampleitem"><span class="methodexample">addToGroup('uiGroup', 'mySprite', 0)</span> - Adds Lua Object "mySprite" to the bottom of UI Group.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: add “tag” to “group” at 1</p>
+			<p class="methodbox">ZS syntax: add “tag” to “group” at [index]</p>
 			<hr>
 
 			<h2 id="removeFromGroup">removeFromGroup</h2>
@@ -302,7 +302,7 @@
 				<li class="exampleitem"><span class="methodexample">removeFromGroup('groupName', _, 'mySprite')</span> - Removes Object named "mySprite" from the UI Group.</li>
 				<li class="exampleitem"><span class="methodexample">removeFromGroup('groupName', 0)</span> - Removes the object at the bottom of the UI Group.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: remove from “group” | remove at 1 from “group” | remove at 1 with “tag” from “group” with true</p>
+			<p class="methodbox">ZS syntax: remove from “group” | remove at [index] from “group” | remove at [index] with “tag” from “group” with true</p>
 			<hr>
 
 			<h2 id="setObjectCamera">setObjectCamera</h2>
@@ -335,7 +335,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setScrollFactor('mySprite', 0, 0)</span> - Object will look like it's immobile/never gets displaced.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change scroll factor of “tag” to 1 and 3</p>
+			<p class="methodbox">ZS syntax: change scroll factor of “tag” to [x] and [y]</p>
 			<hr>
 
 			<h2 id="screenCenter">screenCenter</h2>
@@ -371,7 +371,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">scaleObject('mySprite', 1.5, 2)</span> - Object gets stretched 1.5x larger horizontally and 2x larger vertically.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: scale “tag” with 1 and 3 with true</p>
+			<p class="methodbox">ZS syntax: scale “tag” with [x] and [y] with true</p>
 			<hr>
 
 			<h2 id="setGraphicSize">setGraphicSize</h2>
@@ -391,7 +391,7 @@
 				<li class="exampleitem"><span class="methodexample">setGraphicSize('mySprite', 300, 300)</span> - Object will be 300 pixels wide and 300 pixels tall.</li>
 				<li class="exampleitem"><span class="methodexample">setGraphicSize('mySprite', 500)</span> - Object will be 500 pixels wide, height will be scaled keeping its size constraint.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: scale “tag” by pixel with 1 and 3 with true</p>
+			<p class="methodbox">ZS syntax: scale “tag” by pixel with [x] and [y] with true</p>
 			<hr>
 
 			<h2 id="updateHitbox">updateHitbox</h2>
@@ -496,7 +496,7 @@
 				<li><b><span class="variablemarkup">y</span></b> - Pixel Y of the Graphic.</li>
 			</ul>
 			<p style="color: gray">Note: Sprites will require to have their <a href="precache.html#precacheImage">GPU Caching turned off</a> for it to work.</p>
-			<p class="methodbox">ZS syntax: read pixel of “tag” with 1 and 3</p>
+			<p class="methodbox">ZS syntax: read pixel of “tag” with [x] and [y]</p>
 			<hr>
 
 			<h2 id="objectsOverlap">objectsOverlap</h2>
