@@ -59,6 +59,7 @@
 				<li class="exampleitem"><span class="methodexample">playSound('confirmMenu', 0.4)</span> - Plays "assets/shared/sounds/confirmMenu.ogg".</li>
 				<li class="exampleitem"><span class="methodexample">playSound('custom_sound', 0.4, 'mySound')</span> - Plays "mods/My-Mod/sounds/custom_sound.ogg" and save it to "mySound" tag.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: play sound “sound” with volume [number] name “tag” with [boolean]</p>
 			<hr>
 
 			<h2 id="playMusic">playMusic</h2>
@@ -75,6 +76,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">playMusic('breakfast')</span> - Plays "assets/shared/music/breakfast.ogg".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: play music “music” with volume [number] with [boolean]</p>
 			<hr>
 
 			<h2 id="soundFadeIn">soundFadeIn</h2>
@@ -94,6 +96,7 @@
 				<li class="exampleitem"><span class="methodexample">soundFadeIn('mySound', 0.5)</span> - Fades "mySound" Lua Sound in 0.5 seconds.</li>
 				<li class="exampleitem"><span class="methodexample">soundFadeIn(_, 0.5)</span> - Fades background music in 0.5 seconds.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: fade in “tag” duration [number] from [numStart] to [numEnd]</p>
 			<hr>
 
 			<h2 id="soundFadeOut">soundFadeOut</h2>
@@ -106,6 +109,7 @@
 				<li><b><span class="variablemarkup">duration</span></b> - Tween duration.</li>
 				<li><b><span class="variablemarkup">toValue</span></b> - Tween target volume.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: fade out “tag” duration [number] to [numEnd]</p>
 			<hr>
 
 			<h2 id="soundFadeCancel">soundFadeCancel</h2>
@@ -114,6 +118,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: cancel fade “tag”</p>
 			<hr>
 
 			<h2 id="stopSound">stopSound</h2>
@@ -122,6 +127,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: stop sound “tag”</p>
 			<hr>
 
 			<h2 id="pauseSound">pauseSound</h2>
@@ -130,6 +136,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: pause sound “tag”</p>
 			<hr>
 
 			<h2 id="resumeSound">resumeSound</h2>
@@ -138,14 +145,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
-			<hr>
-
-			<h2 id="luaSoundExists">luaSoundExists</h2>
-			<p class="methodbox">luaSoundExists(<span class="variablemarkup">tag</span>:String):Bool</p>
-			<p>Returns whether a Lua Sound with a specific tag exists.</p>
-			<ul>
-				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag.</li>
-			</ul>
+			<p class="methodbox">ZS syntax: resume sound “tag”</p>
 			<hr>
 
 			<h2 id="getSoundVolume">getSoundVolume</h2>
@@ -154,6 +154,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read volume of sound “tag”</p>
 			<hr>
 
 			<h2 id="setSoundVolume">setSoundVolume</h2>
@@ -163,6 +164,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 				<li><b><span class="variablemarkup">value</span></b> - Volume to set it to, ranges from 0 to 1.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change volume of sound “tag” to [number]</p>
 			<hr>
 
 			<h2 id="getSoundTime">getSoundTime</h2>
@@ -171,6 +173,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read time of sound “tag”</p>
 			<hr>
 
 			<h2 id="setSoundTime">setSoundTime</h2>
@@ -180,6 +183,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 				<li><b><span class="variablemarkup">value</span></b> - Time to set it to, in milliseconds.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change time of sound “tag” to [number]</p>
 			<hr>
 
 			<h2 id="getSoundPitch">getSoundPitch</h2>
@@ -188,6 +192,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag, use "null" for the Music from <a href="#playMusic">"playMusic"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read pitch of sound “tag”</p>
 			<hr>
 
 			<h2 id="setSoundPitch">setSoundPitch</h2>
@@ -198,5 +203,15 @@
 				<li><b><span class="variablemarkup">value</span></b> - Pitch to set it to.</li>
 				<li><b><span class="variablemarkup">doPause (Optional)</span></b> - Pauses and resumes sound while changing pitch, might be needed to update the Pitch properly unless the sound is already paused.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change pitch of sound “tag” to [number]</p>
+			<hr>
+
+			<h2 id="luaSoundExists">luaSoundExists</h2>
+			<p class="methodbox">luaSoundExists(<span class="variablemarkup">tag</span>:String):Bool</p>
+			<p>Returns whether a Lua Sound with a specific tag exists.</p>
+			<ul>
+				<li><b><span class="variablemarkup">tag</span></b> - Lua Sound nametag.</li>
+			</ul>
+			<p class="methodbox">ZS syntax: sound “tag” exists</p>
 	</body>
 </html>

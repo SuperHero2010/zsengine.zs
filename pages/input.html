@@ -51,6 +51,7 @@
 				<li class="exampleitem"><span class="methodexample">mouseClicked()</span> - Checks for Left click.</li>
 				<li class="exampleitem"><span class="methodexample">mouseClicked('right')</span> - Checks for Right click.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: mouse “button” clicked</p>
 			<hr>
 
 			<h2 id="mousePressed">mousePressed</h2>
@@ -59,6 +60,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - Can be: "left", "middle" or "right". Defaults to "left"</li>
 			</ul>
+			<p class="methodbox">ZS syntax: mouse “button” pressed</p>
 			<hr>
 
 			<h2 id="mouseReleased">mouseReleased</h2>
@@ -67,6 +69,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - Can be: "left", "middle" or "right". Defaults to "left"</li>
 			</ul>
+			<p class="methodbox">ZS syntax: mouse “button” released</p>
 			<hr>
 
 			<h2 id="getMouseX">getMouseX</h2>
@@ -80,6 +83,7 @@
 				<li class="exampleitem"><span class="methodexample">getMouseX()</span> - Mouse X on Game Camera.</li>
 				<li class="exampleitem"><span class="methodexample">getMouseX('hud')</span> - Mouse X on HUD Camera.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read mouse x on “camera”</p>
 			<hr>
 
 			<h2 id="getMouseY">getMouseY</h2>
@@ -88,6 +92,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">camera</span></b> - Can be "game", "hud" or "other".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read mouse y on “camera”</p>
 			<hr>
 
 			<h2 id="keyJustPressed">keyJustPressed</h2>
@@ -101,6 +106,7 @@
 				<li class="exampleitem"><span class="methodexample">keyJustPressed('up')</span> - Pressed <b>Up Note</b> button.</li>
 				<li class="exampleitem"><span class="methodexample">keyJustPressed('ui_up')</span> - Pressed <b>Menu Up</b> button, this is a different keybind from Up Note despite the default keys being the same.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: key “button” just pressed</p>
 			<hr>
 
 			<h2 id="keyJustPressed">keyPressed</h2>
@@ -109,6 +115,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - Same as <a href="#keyJustPressed">"keyJustPressed"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: key “button” pressed</p>
 			<hr>
 
 			<h2 id="keyReleased">keyReleased</h2>
@@ -117,6 +124,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - Same as <a href="#keyJustPressed">"keyJustPressed"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: key “button” released</p>
 			<hr>
 
 			<h2 id="keyboardJustPressed">keyboardJustPressed</h2>
@@ -130,6 +138,7 @@
 				<li class="exampleitem"><span class="methodexample">keyboardJustPressed('ENTER')</span> - Pressed Enter in your keyboard.</li>
 				<li class="exampleitem"><span class="methodexample">keyboardJustPressed('F5')</span> - Pressed F5 in your keyboard.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: keyboard “button” just pressed</p>
 			<hr>
 
 			<h2 id="keyboardPressed">keyboardPressed</h2>
@@ -138,6 +147,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - <a href="https://api.haxeflixel.com/flixel/input/keyboard/FlxKey.html">Click here for the full list of buttons</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: keyboard “button” pressed</p>
 			<hr>
 
 			<h2 id="keyboardReleased">keyboardReleased</h2>
@@ -146,6 +156,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - <a href="https://api.haxeflixel.com/flixel/input/keyboard/FlxKey.html">Click here for the full list of buttons</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: keyboard “button” released</p>
 			<hr>
 
 			<h2 id="anyGamepadJustPressed">anyGamepadJustPressed</h2>
@@ -159,6 +170,7 @@
 				<li class="exampleitem"><span class="methodexample">anyGamepadJustPressed('DPAD_LEFT')</span> - Pressed Arrow Left in any gamepad.</li>
 				<li class="exampleitem"><span class="methodexample">anyGamepadJustPressed('X')</span> - Pressed X in any gamepad.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: any gamepad “button” just pressed</p>
 			<hr>
 
 			<h2 id="anyGamepadPressed">anyGamepadPressed</h2>
@@ -167,6 +179,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - <a href="https://api.haxeflixel.com/flixel/input/gamepad/FlxGamepadInputID.html">Click here for the full list of buttons</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: any gamepad “button” pressed</p>
 			<hr>
 
 			<h2 id="anyGamepadReleased">anyGamepadReleased</h2>
@@ -175,6 +188,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">button</span></b> - <a href="https://api.haxeflixel.com/flixel/input/gamepad/FlxGamepadInputID.html">Click here for the full list of buttons</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: any gamepad “button” released</p>
 			<hr>
 
 			<h2 id="gamepadJustPressed">gamepadJustPressed</h2>
@@ -189,6 +203,7 @@
 				<li class="exampleitem"><span class="methodexample">gamepadJustPressed(0, 'DPAD_LEFT')</span> - Pressed Arrow Left in controller #1.</li>
 				<li class="exampleitem"><span class="methodexample">gamepadJustPressed(1, 'X')</span> - Pressed X in in controller #2.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: gamepad id “id” button “button” just pressed</p>
 			<hr>
 
 			<h2 id="gamepadPressed">gamepadPressed</h2>
@@ -198,6 +213,7 @@
 				<li><b><span class="variablemarkup">id</span></b> - Controller ID, by detection order.</li>
 				<li><b><span class="variablemarkup">button</span></b> - <a href="https://api.haxeflixel.com/flixel/input/gamepad/FlxGamepadInputID.html">Click here for the full list of buttons</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: gamepad id “id” button “button” pressed</p>
 			<hr>
 
 			<h2 id="gamepadReleased">gamepadReleased</h2>
@@ -207,6 +223,7 @@
 				<li><b><span class="variablemarkup">id</span></b> - Controller ID, by detection order.</li>
 				<li><b><span class="variablemarkup">button</span></b> - <a href="https://api.haxeflixel.com/flixel/input/gamepad/FlxGamepadInputID.html">Click here for the full list of buttons</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: gamepad id “id” button “button” released</p>
 			<hr>
 
 			<h2 id="gamepadAnalogX">gamepadAnalogX</h2>
@@ -221,6 +238,7 @@
 				<li class="exampleitem"><span class="methodexample">gamepadAnalogX(0)</span> - Returns Left Analog X of controller #1.</li>
 				<li class="exampleitem"><span class="methodexample">gamepadAnalogX(1, false)</span> - Returns Right X Analog of controller #2.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: gamepad id “id” analog x with [boolean]</p>
 			<hr>
 
 			<h2 id="gamepadAnalogY">gamepadAnalogY</h2>
@@ -230,5 +248,6 @@
 				<li><b><span class="variablemarkup">id</span></b> - Controller ID, by detection order.</li>
 				<li><b><span class="variablemarkup">button</span></b> - Left or Right analog? Default is Left (true).</li>
 			</ul>
+			<p class="methodbox">ZS syntax: gamepad id “id” analog y with [boolean]</p>
 	</body>
 </html>

@@ -108,7 +108,7 @@
 				<li class="exampleitem"><span class="methodexample">setProperty('singAnimations[3]', 'singLEFT')</span> - Will force Right sing animation to be "singLEFT".</li>
 				<li class="exampleitem"><span class="methodexample">setProperty('boyfriend.animOffsets.idle', {-200, 100}, true)</span> - Changes Player's Idle offsets to X -200, Y 100.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change “variable” to 0.5 with [boolean] and [boolean]</p>
+			<p class="methodbox">ZS syntax: change “variable” to [value] with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="setPropertyFromGroup">setPropertyFromGroup</h2>
@@ -133,7 +133,7 @@
 				<li class="exampleitem"><span class="methodexample">setPropertyFromGroup('playerStrums', 2, 'visible', false)</span> - Hides Player's Up note.</li>
 				<li class="exampleitem"><span class="methodexample">setPropertyFromGroup('unspawnNotes', 0, 'extraData.testVar', true, true)</span> - Lua equivalent of <b>unspawnNotes[0].extraData.set('testVar', true)</b>.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change in group “variable” at [index] property “property” to 0.5 with [boolean] and [boolean]</p>
+			<p class="methodbox">ZS syntax: change in group “variable” at [index] property “property” to [value] with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="setPropertyFromClass">setPropertyFromClass</h2>
@@ -155,7 +155,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setPropertyFromClass('states.PlayState', 'SONG.player1', 'pico-playable')</span> - Force set Player character to "pico-playable".</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change in class “class” variable “variable” to 0.5 with [boolean] and [boolean]</p>
+			<p class="methodbox">ZS syntax: change in class “class” variable “variable” to [value] with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="callMethod">callMethod</h2>
@@ -266,7 +266,7 @@
 				<li class="exampleitem"><span class="methodexample">setObjectOrder('boyfriendGroup', getObjectOrder('gfGroup'))</span> - Sets the Player's Character Group to be a layer behind Girlfriend.</li>
 				<li class="exampleitem"><span class="methodexample">setObjectOrder('iconP1', 0, 'uiGroup')</span> - Makes Player Icon a layer behind everything else.</li>
 			</ul>
-			<p class="methodbox">ZS syntax: change in order of “tag” to [index] with “group”</p>
+			<p class="methodbox">ZS syntax: change in order of “tag” to [value] with “group”</p>
 			<hr>
 
 			<h2 id="addToGroup">addToGroup</h2>

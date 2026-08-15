@@ -47,6 +47,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setCameraScroll(0.0, 0.0)</span> - Camera Scroll position is set to X: 0 and Y: 0.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change scroll camera with [x] and [y]</p>
 			<hr>
 
 			<h2 id="setCameraFollowPoint">setCameraFollowPoint</h2>
@@ -56,6 +57,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setCameraFollowPoint(-150.0, 150.0)</span> - Camera Follow point is set to 150 units to the left and 150 units down.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change camera follow to point [x] and [y]</p>
 			<hr>
 
 			<h2 id="addCameraScroll">addCameraScroll</h2>
@@ -66,6 +68,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">addCameraScroll(200.0, -100.0)</span> - Camera Scroll moves 200 units to the right and 100 units up.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add scroll camera with [x] and [y]</p>
 			<hr>
 
 			<h2 id="addCameraFollowPoint">addCameraFollowPoint</h2>
@@ -76,26 +79,31 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">addCameraFollowPoint(-600.0, -200.0)</span> - Camera Follow point moves 600 units to the left and 200 units up.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add camera follow point [x] and [y]</p>
 			<hr>
 
 			<h2 id="getCameraScrollX">getCameraScrollX</h2>
 			<p class="methodbox">Usage: <b>getCameraScrollX()</b></p>
 			<p>Returns Game Camera's current scroll X, float value.</p>
+			<p class="methodbox">ZS syntax: read camera scroll x</p>
 			<hr>
 
 			<h2 id="getCameraScrollY">getCameraScrollY</h2>
 			<p class="methodbox">Usage: <b>getCameraScrollY()</b></p>
 			<p>Returns Game Camera's current scroll Y, float value.</p>
+			<p class="methodbox">ZS syntax: read camera scroll y</p>
 			<hr>
 
 			<h2 id="getCameraFollowX">getCameraFollowX</h2>
 			<p class="methodbox">Usage: <b>getCameraFollowX()</b></p>
 			<p>Returns Game Camera's follow point X, float value.</p>
+			<p class="methodbox">ZS syntax: read camera follow x</p>
 			<hr>
 
 			<h2 id="getCameraFollowY">getCameraFollowY</h2>
 			<p class="methodbox">Usage: <b>getCameraFollowY()</b></p>
 			<p>Returns Game Camera's follow point Y, float value.</p>
+			<p class="methodbox">ZS syntax: read camera follow y</p>
 			<hr>
 
 			<h2 id="cameraSetTarget">cameraSetTarget</h2>
@@ -108,6 +116,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">cameraSetTarget('opponent')</span> - Sets camera follow point to Opponent.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change camera to “character”</p>
 			<hr>
 
 			<h2 id="cameraShake">cameraShake</h2>
@@ -122,6 +131,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">cameraShake('game', 0.025, 0.35)</span> - Shakes Game Camera for 0.35 seconds, intensity 0.025.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: shake camera “camera” with value [number] and [number]</p>
 			<hr>
 
 			<h2 id="cameraFlash">cameraFlash</h2>
@@ -138,6 +148,7 @@
 				<li class="exampleitem"><span class="methodexample">cameraFlash('game', 'FFFFFF', 0.5, true)</span> - Flashbangs you, lasts for 0.5 seconds, color #FFFFFF (White).</li>
 				<li class="exampleitem"><span class="methodexample">cameraFlash('game', 'red', 0.25, true)</span> - Flashes red, lasts for 0.25 seconds.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: flash camera “camera” with color “color” duration [number] with [boolean]</p>
 			<hr>
 
 			<h2 id="cameraFlash">cameraFade</h2>
@@ -155,5 +166,6 @@
 				<li class="exampleitem"><span class="methodexample">cameraFade('game', 'FFFFFF', 0.35, true)</span> - Fade in to white in 0.35 seconds.</li>
 				<li class="exampleitem"><span class="methodexample">cameraFade('game', 'FFFFFF', 0.35, true, true)</span> - Fade out to white in 0.35 seconds.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: fade camera “camera” with color “color” duration [number] with [boolean] and [boolean]</p>
 	</body>
 </html>

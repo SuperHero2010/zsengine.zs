@@ -51,6 +51,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">initLuaShader('pixelate')</span> - Preloads "mods/My-Mod/shaders/pixelate.frag".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: register shader “name” (You can put noun or string)</p>
 			<hr>
 
 			<h2 id="setSpriteShader">setSpriteShader</h2>
@@ -65,6 +66,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setSpriteShader('mySprite', 'pixelate')</span> - Sets Lua Sprite with tag "mySprite" to use "mods/My-Mod/shaders/pixelate.frag" shader.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: apply shader “name” to “sprite”</p>
 			<hr>
 
 			<h2 id="removeSpriteShader">removeSpriteShader</h2>
@@ -78,6 +80,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">removeSpriteShader('mySprite')</span> - Removes Shader from the Lua Sprite with tag "mySprite".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: remove shader from “sprite”</p>
 			<hr>
 
 			<h2 id="getShaderBool">getShaderBool</h2>
@@ -91,6 +94,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">getShaderBool('mySprite', 'iVar')</span> - Returns the value of an uniform variable named "iVar" from a Lua Sprite named "mySprite".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read shader(bool) “sprite” uniform “prop”</p>
 			<hr>
 
 			<h2 id="getShaderBoolArray">getShaderBoolArray</h2>
@@ -100,6 +104,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Sprite variable name or Lua Sprite nametag.</li>
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read shader(boolArray) “sprite” uniform “prop”</p>
 			<hr>
 
 			<h2 id="getShaderInt">getShaderInt</h2>
@@ -109,6 +114,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Sprite variable name or Lua Sprite nametag.</li>
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read shader(int) “sprite” uniform “prop”</p>
 			<hr>
 
 			<h2 id="getShaderIntArray">getShaderIntArray</h2>
@@ -118,6 +124,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Sprite variable name or Lua Sprite nametag.</li>
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read shader(intArray) “sprite” uniform “prop”</p>
 			<hr>
 
 			<h2 id="getShaderFloat">getShaderFloat</h2>
@@ -127,6 +134,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Sprite variable name or Lua Sprite nametag.</li>
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read shader(float) “sprite” uniform “prop”</p>
 			<hr>
 
 			<h2 id="getShaderFloatArray">getShaderFloatArray</h2>
@@ -136,6 +144,7 @@
 				<li><b><span class="variablemarkup">tag</span></b> - Sprite variable name or Lua Sprite nametag.</li>
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read shader(floatArray) “sprite” uniform “prop”</p>
 			<hr>
 
 			<h2 id="setShaderBool">setShaderBool</h2>
@@ -151,6 +160,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setShaderBool('mySprite', 'iVar', true)</span> - Sets the value of an uniform variable named "iVar" from a Lua Sprite named "mySprite" to "true".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(bool) “sprite” uniform “prop” to [boolean]</p>
 			<hr>
 
 			<h2 id="setShaderBoolArray">setShaderBoolArray</h2>
@@ -166,6 +176,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setShaderBoolArray('mySprite', 'iVar', {true, false, true})</span> - Sets the value of an uniform variable named "iVar" from a Lua Sprite named "mySprite" to an Array of "[true, false, true]".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(boolArray) “sprite” uniform “prop” to {}</p>
 			<hr>
 
 			<h2 id="setShaderInt">setShaderInt</h2>
@@ -177,6 +188,7 @@
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 				<li><b><span class="variablemarkup">value</span></b> - Value to set.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(int) “sprite” uniform “prop” to [intNum]</p>
 			<hr>
 
 			<h2 id="setShaderIntArray">setShaderIntArray</h2>
@@ -188,6 +200,7 @@
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 				<li><b><span class="variablemarkup">value</span></b> - Value to set.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(intArray) “sprite” uniform “prop” to {}</p>
 			<hr>
 
 			<h2 id="setShaderFloat">setShaderFloat</h2>
@@ -199,6 +212,7 @@
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 				<li><b><span class="variablemarkup">value</span></b> - Value to set.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(float) “sprite” uniform “prop” to [floatNum]</p>
 			<hr>
 
 			<h2 id="setShaderFloatArray">setShaderFloatArray</h2>
@@ -210,6 +224,7 @@
 				<li><b><span class="variablemarkup">prop</span></b> - Uniform variable name.</li>
 				<li><b><span class="variablemarkup">value</span></b> - Value to set.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(floatArray) “sprite” uniform “prop” to {}</p>
 			<hr>
 
 			<h2 id="setShaderSampler2D">setShaderSampler2D</h2>
@@ -225,5 +240,6 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setShaderBool('mySprite', 'iVar', 'myImage')</span> - Imports "mods/My-Mod/images/myImage.png" to the Sampler2D variable.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change shader(sampler2D) “sprite” uniform “prop” path “image”</p>
 	</body>
 </html>

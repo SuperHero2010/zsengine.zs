@@ -60,6 +60,7 @@
 				<li class="exampleitem"><span class="methodexample">makeLuaText('myText', 'Hello World!', 300, 400, 320)</span>Creates a text displaying "Hello World!" with a defined width, X and Y.</li>
 			</ul>
 			<p style="color: gray">Note: You will still have to add the Lua Text to the scene with <a href="#addLuaText">addLuaText</a> or it won't be visible.</p>
+			<p class="methodbox">ZS syntax: create text &lt;tag&gt; content “text” width [number] position [x] and [y]</p>
 			<hr>
 
 			<h2 id="addLuaText">addLuaText</h2>
@@ -72,6 +73,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">addLuaText('myText')</span> - Adds to the scene a Lua Text created with <span class="methodexample">makeLuaText('myText', 'This is a Test')</span>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add text &lt;tag&gt;</p>
 			<hr>
 
 			<h2 id="removeLuaText">removeLuaText</h2>
@@ -85,6 +87,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">removeLuaText('myText')</span> - Removes a Lua Text created with <span class="methodexample">makeLuaText('myText', 'This is a Test')</span>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: remove text &lt;tag&gt; with true</p>
 			<hr>
 
 			<h2 id="setTextString">setTextString</h2>
@@ -99,6 +102,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextString('myText', 'Goodbye World!')</span> - Changes the Lua Text's text to "Goodbye World!".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change text &lt;tag&gt; to content “text”</p>
 			<hr>
 
 			<h2 id="setTextSize">setTextSize</h2>
@@ -114,6 +118,7 @@
 				<li class="exampleitem"><span class="methodexample">setTextSize('myText', 32)</span> - Make the text really big.</li>
 				<li class="exampleitem"><span class="methodexample">setTextSize('myText', 4)</span> - Make the text really small.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change size of text &lt;tag&gt; to size [number]</p>
 			<hr>
 
 			<h2 id="setTextWidth">setTextWidth</h2>
@@ -128,6 +133,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextWidth('myText', 150)</span> - Make the text's max width be 150 pixels.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change width of text &lt;tag&gt; to width [number]</p>
 			<hr>
 
 			<h2 id="setTextHeight">setTextHeight</h2>
@@ -142,6 +148,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextHeight('myText', 50)</span> - Make the text's max height be 50 pixels.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change height of text &lt;tag&gt; to height 36</p>
 			<hr>
 
 			<h2 id="setTextAutoSize">setTextAutoSize</h2>
@@ -156,6 +163,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextAutoSize('myText', false)</span> - Disable auto-size.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change auto size of text &lt;tag&gt; to [boolean]</p>
 			<hr>
 
 			<h2 id="setTextBorder">setTextBorder</h2>
@@ -176,6 +184,7 @@
 				<li class="exampleitem"><span class="methodexample">setTextBorder('myText', 3, 'black')</span> - Sets a thick black outline to the text.</li>
 				<li class="exampleitem"><span class="methodexample">setTextBorder('myText', 1, 'FF0000', 'outline_fast')</span> - Sets a Fast/Optimized thin red outline to the text.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change border of text &lt;tag&gt; to size [number] color “color” style “style”</p>
 			<hr>
 
 			<h2 id="setTextColor">setTextColor</h2>
@@ -191,6 +200,7 @@
 				<li class="exampleitem"><span class="methodexample">setTextColor('myText', '7F7F7F')</span> - Makes text gray.</li>
 				<li class="exampleitem"><span class="methodexample">setTextColor('myText', 'red')</span> - Makes text red.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change color of text &lt;tag&gt; to color “color”</p>
 			<hr>
 
 			<h2 id="setTextFont">setTextFont</h2>
@@ -205,6 +215,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextFont('myText', 'comicSans.ttf')</span> - Loads font from "mods/My-Mod/fonts/comicSans.ttf" into "myText" Lua Text.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change font of text &lt;tag&gt; to font “font”</p>
 			<hr>
 
 			<h2 id="setTextFont">setTextItalic</h2>
@@ -219,6 +230,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextItalic('myText', true)</span> - Toggle on Italic in a Lua Text.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change italic of text &lt;tag&gt; to true</p>
 			<hr>
 
 			<h2 id="setTextAlignment">setTextAlignment</h2>
@@ -233,6 +245,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setTextAlignment('myText', 'center')</span> - Makes a Lua Text centered.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change alignment of text &lt;tag&gt; to alignment “alignment”</p>
 			<hr>
 
 			<h2 id="getTextString">getTextString</h2>
@@ -246,6 +259,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">getTextString('myText')</span> - Returns the Text string from a Lua Text named "myText".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read content of text &lt;tag&gt;</p>
 			<hr>
 
 			<h2 id="getTextSize">getTextSize</h2>
@@ -255,6 +269,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Text instance variable/Lua Text nametag.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read size of text &lt;tag&gt;</p>
 			<hr>
 
 			<h2 id="getTextFont">getTextFont</h2>
@@ -264,6 +279,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Text instance variable/Lua Text nametag.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read font of text &lt;tag&gt;</p>
 			<hr>
 
 			<h2 id="getTextWidth">getTextWidth</h2>
@@ -273,6 +289,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Text instance variable/Lua Text nametag.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read width of text &lt;tag&gt;</p>
 			<hr>
 
 			<h2 id="luaTextExists">luaTextExists</h2>
@@ -281,5 +298,6 @@
 			<ul>
 				<li><b><span class="variablemarkup">tag</span></b> - Lua Text nametag.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: text &lt;tag&gt; exists</p>
 	</body>
 </html>
