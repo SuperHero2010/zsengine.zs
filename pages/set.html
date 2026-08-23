@@ -189,8 +189,8 @@ onCreate:
 ! ORIENT
 
 onCreate:
-    change &lt;A&gt; to {1, 2, 3}
-    change &lt;B&gt; to {1, 2, 3, 4, 5}
+    local &lt;A&gt; = {1, 2, 3}
+    local &lt;B&gt; = {1, 2, 3, 4, 5}
 
     -/ ⊂ means subset (allows equal)
     if &lt;A&gt; ⊂ &lt;B&gt; then
@@ -205,8 +205,8 @@ onCreate:
 ! WESTERN
 
 onCreate:
-    change &lt;A&gt; to {1, 2, 3}
-    change &lt;B&gt; to {1, 2, 3, 4, 5}
+    local &lt;A&gt; = {1, 2, 3}
+    local &lt;B&gt; = {1, 2, 3, 4, 5}
 
     -/ ⊂ means proper subset (no equal)
     if &lt;A&gt; ⊂ &lt;B&gt; then
@@ -220,23 +220,23 @@ onCreate:
 			<pre class="methodbox">! ZS-LUA
 
 onCreate:
-    change &lt;A&gt; to {1, 2, 3, 4, 5}
-    change &lt;B&gt; to {4, 5, 6, 7, 8}
+    local &lt;A&gt; = {1, 2, 3, 4, 5}
+    local &lt;B&gt; = {4, 5, 6, 7, 8}
 
     -/ Intersection: {4, 5}
-    change &lt;C&gt; to &lt;A&gt; ∩ &lt;B&gt;
+    local &lt;C&gt; = &lt;A&gt; ∩ &lt;B&gt;
 
     -/ Union: {1, 2, 3, 4, 5, 6, 7, 8}
-    change &lt;D&gt; to &lt;A&gt; ∪ &lt;B&gt;
+    local &lt;D&gt; = &lt;A&gt; ∪ &lt;B&gt;
 
     -/ Set Difference: {1, 2, 3}
-    change &lt;E&gt; to &lt;A&gt; \ &lt;B&gt;</pre>
+    local &lt;E&gt; = &lt;A&gt; \ &lt;B&gt;</pre>
 
 			<h3>Element Checking</h3>
 			<pre class="methodbox">! ZS-LUA
 
 onCreate:
-    change &lt;S&gt; to {10, 20, 30, 40, 50}
+    local &lt;S&gt; = {10, 20, 30, 40, 50}
 
     if 20 ∈ &lt;S&gt; then
         print: “20 is in the set”
@@ -248,15 +248,15 @@ onCreate:
 			<pre class="methodbox">! ZS-LUA
 
 onCreate:
-    change &lt;A&gt; to {1, 2, 3, 4, 5, 6}
-    change &lt;B&gt; to {4, 5, 6, 7, 8}
-    change &lt;C&gt; to {6, 7, 8, 9, 10}
+    local &lt;A&gt; = {1, 2, 3, 4, 5, 6}
+    local &lt;B&gt; = {4, 5, 6, 7, 8}
+    local &lt;C&gt; = {6, 7, 8, 9, 10}
 
     -/ (A ∩ B) ∪ C
-    change &lt;result&gt; to (&lt;A&gt; ∩ &lt;B&gt;) ∪ &lt;C&gt;
+    local &lt;result&gt; = (&lt;A&gt; ∩ &lt;B&gt;) ∪ &lt;C&gt;
 
     -/ (A \ B) ∩ C
-    change &lt;result2&gt; to (&lt;A&gt; \ &lt;B&gt;) ∩ &lt;C&gt;</pre>
+    local &lt;result2&gt; = (&lt;A&gt; \ &lt;B&gt;) ∩ &lt;C&gt;</pre>
 
 			<hr>
 
