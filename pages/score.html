@@ -46,6 +46,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - How much to add.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add [number] to score</p>
 			<hr>
 
 			<h2 id="setScore">setScore</h2>
@@ -54,6 +55,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - New score.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change score to [number]</p>
 			<hr>
 
 			<h2 id="addMisses">addMisses</h2>
@@ -62,6 +64,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - How much to add.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add [count] to miss</p>
 			<hr>
 
 			<h2 id="setMisses">setMisses</h2>
@@ -70,6 +73,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - New misses.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change miss to [count]</p>
 			<hr>
 
 			<h2 id="addHits">addHits</h2>
@@ -78,6 +82,7 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - How much to add.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add [count] to hit</p>
 			<hr>
 
 			<h2 id="setHits">setHits</h2>
@@ -86,11 +91,13 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - New hits.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change hit to [count]</p>
 			<hr>
 
-			<h2 id="getScore">getHealth</h2>
+			<h2 id="getHealth">getHealth</h2>
 			<p class="methodbox">Usage: <b>getHealth()</b></p>
-			<p>Returns current health, max of 2 (Which is 100% health).
+			<p>Returns current health, max of 2 (Which is 100% health) & max of 4 (Which is 200% health).</p>
+			<p class="methodbox">ZS syntax: read health</p>
 			<hr>
 
 			<h2 id="addHealth">addHealth</h2>
@@ -99,14 +106,16 @@
 			<ul>
 				<li><b><span class="variablemarkup">value</span></b> - How much to add.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add [value] to health</p>
 			<hr>
 
 			<h2 id="setHealth">setHealth</h2>
 			<p class="methodbox">setHealth(<span class="isoptional">?</span><span class="variablemarkup">value</span>:Float = 1):Void</p>
 			<p>Sets health.</p>
 			<ul>
-				<li><b><span class="variablemarkup">value</span></b> - New health, 0 will kill you, 2 is full health.</li>
+				<li><b><span class="variablemarkup">value</span></b> - New health, 0 will kill you, 2 or 4 are full health.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change health to [value]</p>
 			<hr>
 
 			<h2 id="setRatingPercent">setRatingPercent</h2>
@@ -116,6 +125,7 @@
 				<li><b><span class="variablemarkup">value</span></b> - Sets Rating percent (normally ranges from 0 to 1).</li>
 			</ul>
 			<p style="color: gray">Note: For optimization sake, you have to call <a href="#updateScoreText">updateScoreText()</a> after changing it.</p>
+			<p class="methodbox">ZS syntax: change rating percent to [value]</p>
 			<hr>
 
 			<h2 id="setRatingName">setRatingName</h2>
@@ -125,6 +135,7 @@
 				<li><b><span class="variablemarkup">value</span></b> - Sets Rating name.</li>
 			</ul>
 			<p style="color: gray">Note: For optimization sake, you have to call <a href="#updateScoreText">updateScoreText()</a> after changing it.</p>
+			<p class="methodbox">ZS syntax: change rating name to “name”</p>
 			<hr>
 
 			<h2 id="setRatingFC">setRatingFC</h2>
@@ -134,10 +145,12 @@
 				<li><b><span class="variablemarkup">value</span></b> - Sets Rating FC string.</li>
 			</ul>
 			<p style="color: gray">Note: For optimization sake, you have to call <a href="#updateScoreText">updateScoreText()</a> after changing it.</p>
+			<p class="methodbox">ZS syntax: change rating FC to “name”</p>
 			<hr>
 
 			<h2 id="updateScoreText">updateScoreText</h2>
 			<p class="methodbox">Usage: <b>updateScoreText()</b></p>
 			<p>Updates displayed score text.</p>
+			<p class="methodbox">ZS syntax: update score text</p>
 	</body>
 </html>

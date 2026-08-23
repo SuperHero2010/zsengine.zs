@@ -43,6 +43,7 @@
 			<h2 id="getRunningScripts">getRunningScripts</h2>
 			<p class="methodbox">Usage: <b>getRunningScripts()</b></p>
 			<p>Returns a table with the path of all Lua Scripts running.</p>
+			<p class="methodbox">ZS syntax: read running scripts</p>
 			<hr>
 
 			<h2 id="callScript">callScript</h2>
@@ -59,6 +60,7 @@
 				<li class="exampleitem"><span class="methodexample">callScript('mods/scripts/test.lua', 'customFunction', {0, 999})</span> - This will call <span class="methodexample">customFunction(0, 999)</span> in the script at <span class="methodexample">mods/scripts/test.lua</span>.</li>
 				<li class="exampleitem"><span class="methodexample">callScript('scripts/test', 'customFunction', {0, 999})</span> - Same as above, but without absolute path.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: call script “script” property “function” with {}</p>
 			<hr>
 
 			<h2 id="addLuaScript">addLuaScript</h2>
@@ -73,6 +75,7 @@
 				<li class="exampleitem"><span class="methodexample">callScript('mods/scripts/disabled/test.lua')</span> - This will initialize the script at <span class="methodexample">mods/scripts/disabled/test.lua</span>.</li>
 				<li class="exampleitem"><span class="methodexample">callScript('scripts/disabled/test')</span> - Same as above, but without absolute path.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add Lua script “script” with [boolean]</p>
 			<hr>
 
 			<h2 id="addHScript">addHScript</h2>
@@ -87,6 +90,7 @@
 				<li class="exampleitem"><span class="methodexample">callScript('mods/scripts/disabled/test.hx')</span> - This will initialize the script at <span class="methodexample">mods/scripts/disabled/test.hx</span>.</li>
 				<li class="exampleitem"><span class="methodexample">callScript('scripts/disabled/test')</span> - Same as above, but without absolute path.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add HX script “script” with [boolean]</p>
 			<hr>
 
 			<h2 id="removeLuaScript">removeLuaScript</h2>
@@ -101,6 +105,7 @@
 				<li class="exampleitem"><span class="methodexample">removeLuaScript('mods/scripts/test.lua')</span> - Stops the Lua script at <span class="methodexample">mods/scripts/test.lua</span>.</li>
 				<li class="exampleitem"><span class="methodexample">removeLuaScript('scripts/test')</span> - Same as above, but without absolute path.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: remove Lua script “script”</p>
 			<hr>
 
 			<h2 id="removeHScript">removeHScript</h2>
@@ -115,6 +120,7 @@
 				<li class="exampleitem"><span class="methodexample">removeHScript('mods/scripts/test.hx')</span> - Stops HScript at <span class="methodexample">mods/scripts/test.hx</span>.</li>
 				<li class="exampleitem"><span class="methodexample">removeHScript('scripts/test')</span> - Same as above, but without absolute path.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: remove HX script “script”</p>
 			<hr>
 
 			<h2 id="isRunning">isRunning</h2>
@@ -129,6 +135,7 @@
 				<li class="exampleitem"><span class="methodexample">isRunning('mods/scripts/test.hx')</span> - For HScript.</li>
 				<li class="exampleitem"><span class="methodexample">isRunning('scripts/test')</span> - Without absolute path, it could end up detecting any of both.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: script “script” is running</p>
 			<hr>
 
 			<h2 id="setVar">setVar</h2>
@@ -143,6 +150,8 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setVar('storedValue', 10.5)</span> - Saves "10.5" into a variable named "storedValue"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change &lt;var&gt; to [value]</p>
+			<p style="color: gray">Note: That syntax will conflict with syntax <code>change “variable” to [value]</code>.</p>
 			<hr>
 
 			<h2 id="getVar">getVar</h2>
@@ -155,6 +164,8 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">getVar('storedValue')</span> - Returns the value saved from using <a href="#setVar">"setVar"</a>.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read &lt;var&gt;</p>
+			<p style="color: gray">Note: That syntax will conflict with syntax <code>read “property”</code>.</p>
 			<hr>
 
 			<h2 id="setOnScripts">setOnScripts</h2>
@@ -174,6 +185,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setOnScripts('myCounter', 10)</span> - This will add a global called "myCounter" with value "10".<br>This can be accessed in lua through <span class="methodexample">if myCounter == 10 then</span>, for example.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change on scripts &lt;noun&gt; to [value] with [boolean] and {}</p>
 			<hr>
 
 			<h2 id="setOnLuas">setOnLuas</h2>
@@ -182,6 +194,7 @@
 				<span class="isoptional">?</span><span class="variablemarkup">ignoreSelf</span>:Bool = false,
 				<span class="isoptional">?</span><span class="variablemarkup">exclusions</span>:Array&lt;String&gt; = null):Void</p>
 			<p>Structurally identical to <a href="#setOnScripts">"setOnScripts"</a>, but it does not insert the variable into HScripts running.</p>
+			<p class="methodbox">ZS syntax: change on Luas &lt;noun&gt; to [value] with [boolean] and {}</p>
 			<hr>
 
 			<h2 id="setOnHScript">setOnHScript</h2>
@@ -190,6 +203,7 @@
 				<span class="isoptional">?</span><span class="variablemarkup">ignoreSelf</span>:Bool = false,
 				<span class="isoptional">?</span><span class="variablemarkup">exclusions</span>:Array&lt;String&gt; = null):Void</p>
 			<p>Structurally identical to <a href="#setOnScripts">"setOnScripts"</a>, but it does not insert the variable into Lua Scripts running.</p>
+			<p class="methodbox">ZS syntax: change on HScript &lt;noun&gt; to [value] with [boolean] and {}</p>
 			<hr>
 
 			<h2 id="callOnScripts">callOnScripts</h2>
@@ -213,6 +227,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">callOnScripts('customFunction', {1})</span> - This will call <span class="methodexample">customFunction(1)</span> on all Lua Scripts/HScript.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: call on scripts property “function” with {} and {} and {} with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="callOnLuas">callOnLuas</h2>
@@ -223,6 +238,7 @@
 				<span class="isoptional">?</span><span class="variablemarkup">excludeScripts</span>:Array&lt;String&gt; = null,
 				<span class="isoptional">?</span><span class="variablemarkup">excludeValues</span>:Array&lt;Dynamic&gt; = null):Dynamic</p>
 			<p>Structurally identical to <a href="#callOnScripts">"callOnScripts"</a>, but it does not call the function in HScripts.</p>
+			<p class="methodbox">ZS syntax: call on Luas property “function” with {} and {} and {} with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="callOnHScript">callOnHScript</h2>
@@ -233,6 +249,7 @@
 				<span class="isoptional">?</span><span class="variablemarkup">excludeScripts</span>:Array&lt;String&gt; = null,
 				<span class="isoptional">?</span><span class="variablemarkup">excludeValues</span>:Array&lt;Dynamic&gt; = null):Dynamic</p>
 			<p>Structurally identical to <a href="#callOnScripts">"callOnScripts"</a>, but it does not call the function in Lua Scripts.</p>
+			<p class="methodbox">ZS syntax: call on HScript property “function” with {} and {} and {} with [boolean] and [boolean]</p>
 			<hr>
 
 			<h2 id="runHaxeCode">runHaxeCode</h2>
@@ -252,7 +269,8 @@
 				<li class="exampleitem"><span class="methodexample">runHaxeCode(<span class="haxecode">'game.boyfriend.color = FlxColor.RED;'</span>)</span> - Simple HScript code to make the Player get red.</li>
 				<li class="exampleitem"><span class="methodexample">runHaxeCode(<span class="haxecode">'game.boyfriend.scale.y = myValue;'</span>, {myValue = 1.5})</span> - Brings "myValue" to the Haxe Code and use it to change Player's Scale Y.</li>
 			</ul>
-			<p style="color: gray">Note: Do not use "runHaxeCode" every frame! Instead, put your code in functions and call them with <a href="#runHaxeFunction">"runHaxeFunction"</a> after running runHaxeCode atleast once.</p>
+			<p style="color: gray">Note: Do not use "runHaxeCode" every frame! Instead, put your code in functions and call them with <a href="#runHaxeFunction">"runHaxeFunction"</a> after running runHaxeCode at least once.</p>
+			<p class="methodbox">ZS syntax: run Haxe code “code” with {} property “function” | run Haxe code “code” with {} and {} property “function”</p>
 			<hr>
 
 			<h2 id="runHaxeFunction">runHaxeFunction</h2>
@@ -267,6 +285,8 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">runHaxeFunction('myFunction', {1, 999})</span> - Will call <span class="methodexample">function myFunction(1, 999)</span> in the Haxe Code.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: run Haxe property “function” with {}</p>
+			<hr>
 
 			<h2 id="addHaxeLibrary">addHaxeLibrary</h2>
 			<p class="methodbox">addHaxeLibrary(<span class="variablemarkup">libName</span>:String,
@@ -281,9 +301,12 @@
 				<li class="exampleitem"><span class="methodexample">addHaxeLibrary('StringTools')</span> - Imports "StringTools" class.</li>
 				<li class="exampleitem"><span class="methodexample">addHaxeLibrary('FlxMath', 'flixel.math')</span> - Imports "flixel.math.FlxMath" class.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: add Haxe library “lib” package “package”</p>
+			<hr>
 
 			<h2 id="close">close</h2>
 			<p class="methodbox">close():Bool</p>
 			<p>Stops this script.</p>
+			<p class="methodbox">ZS syntax: close script</p>
 	</body>
 </html>

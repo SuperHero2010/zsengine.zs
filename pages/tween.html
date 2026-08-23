@@ -57,6 +57,7 @@
 				<li class="exampleitem"><span class="methodexample">startTween('mySpriteTween', 'mySprite', {x = 1000, y = 500}, 0.5, {ease = 'quadOut', onComplete = 'myTween'})</span> - Starts a tween on the Position of "mySprite" Lua Sprite, calls <span class="methodexample">function myTween('mySpriteTween', 'mySprite')</span> on complete.</li>
 			</ul>
 			<p style="color: gray">Note: For optimization sake, if you're changing a single value, you should use the other tween functions when possible.</p>
+			<p class="methodbox">ZS syntax: start tween tag “twnTag” for “objTag” value {} duration [number] options {}</p>
 			<hr>
 
 			<h2 id="doTweenX">doTweenX</h2>
@@ -74,6 +75,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">doTweenX('mySpriteTween', 'mySprite', 1000, 0.5, 'quadOut')</span> - Starts a tween on the X Position of "mySprite" Lua Sprite.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween x tag “twnTag” for “objTag” value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="doTweenY">doTweenY</h2>
@@ -91,6 +93,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">doTweenY('mySpriteTween', 'mySprite', 500, 0.5, 'quadOut')</span> - Starts a tween on the Y Position of "mySprite" Lua Sprite.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween y tag “twnTag” for “objTag” value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="doTweenAngle">doTweenAngle</h2>
@@ -108,6 +111,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">doTweenAngle('mySpriteTween', 'mySprite', 90, 0.5, 'quadOut')</span> - Starts a tween on Angle of "mySprite" Lua Sprite to set it to 90°.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween angle tag “twnTag” for “objTag” value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="doTweenAlpha">doTweenAlpha</h2>
@@ -125,6 +129,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">doTweenAlpha('mySpriteTween', 'mySprite', 0.25, 0.5, 'quadOut')</span> - Starts a tween on the Alpha of "mySprite" Lua Sprite.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween alpha tag “twnTag” for “objTag” value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="doTweenColor">doTweenColor</h2>
@@ -143,6 +148,7 @@
 				<li class="exampleitem"><span class="methodexample">doTweenColor('mySpriteTween', 'mySprite', 'FF0000', 0.5, 'sineOut')</span> - Starts a tween on "mySprite" Lua Sprite to make it red.</li>
 				<li class="exampleitem"><span class="methodexample">doTweenColor('mySpriteTween', 'mySprite', 'blue', 0.5, 'sineOut')</span> - Starts a tween on "mySprite" Lua Sprite to make it blue.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween color tag “twnTag” for “objTag” color “color” duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="doTweenZoom">doTweenZoom</h2>
@@ -161,6 +167,7 @@
 				<li class="exampleitem"><span class="methodexample">doTweenZoom('testZoomTween', 'game', 1.5, 0.5, 'linear')</span></li>
 			</ul>
 			<p style="color: gray">Note: Use "setProperty('camZooming', false)" to disable the camera automatic zoom-in.</p>
+			<p class="methodbox">ZS syntax: tween zoom tag “twnTag” for “objTag” value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="noteTweenX">noteTweenX</h2>
@@ -179,6 +186,7 @@
 				<li class="exampleitem"><span class="methodexample">noteTweenX('mySpriteTween', 2, 600, 0.5, 'quadOut')</span> - Moves the Opponent's Up note.</li>
 				<li class="exampleitem"><span class="methodexample">noteTweenX('mySpriteTween', 7, 600, 0.5, 'quadOut')</span> - Moves the Player's Right note.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween x tag “twnTag” note [index] value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="noteTweenY">noteTweenY</h2>
@@ -197,6 +205,7 @@
 				<li class="exampleitem"><span class="methodexample">noteTweenY('mySpriteTween', 2, 300, 0.5, 'quadOut')</span> - Moves the Opponent's Up note.</li>
 				<li class="exampleitem"><span class="methodexample">noteTweenY('mySpriteTween', 7, 300, 0.5, 'quadOut')</span> - Moves the Player's Right note.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween y tag “twnTag” note [index] value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="noteTweenAngle">noteTweenAngle</h2>
@@ -215,6 +224,7 @@
 				<li class="exampleitem"><span class="methodexample">noteTweenAngle('mySpriteTween', 2, 90, 0.5, 'quadOut')</span> - Moves the Opponent's Up note.</li>
 				<li class="exampleitem"><span class="methodexample">noteTweenAngle('mySpriteTween', 7, 150, 0.5, 'quadOut')</span> - Moves the Player's Right note.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween angle tag “twnTag” note [index] value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="noteTweenAlpha">noteTweenAlpha</h2>
@@ -233,6 +243,7 @@
 				<li class="exampleitem"><span class="methodexample">noteTweenAlpha('mySpriteTween', 2, 0.25, 0.5, 'quadOut')</span> - Lowers opacity of the Opponent's Up note.</li>
 				<li class="exampleitem"><span class="methodexample">noteTweenAlpha('mySpriteTween', 7, 0.25, 0.5, 'quadOut')</span> - Lowers opacity of the Player's Right note.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween alpha tag “twnTag” note [index] value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="noteTweenDirection">noteTweenDirection</h2>
@@ -251,6 +262,7 @@
 			<li class="exampleitem"><span class="methodexample">noteTweenDirection('mySpriteTween', 2, 180, 0.5, 'quadOut')</span> - Makes notes come sideways from the Opponent's Up note.</li>
 			<li class="exampleitem"><span class="methodexample">noteTweenDirection('mySpriteTween', 7, 0, 0.5, 'quadOut')</span> - Makes notes come sideways from the Player's Right note.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: tween direction tag “twnTag” note [index] value {} duration [number] type “ease”</p>
 			<hr>
 
 			<h2 id="cancelTween">cancelTween</h2>
@@ -263,5 +275,6 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">cancelTween('myTween')</span> - Cancels the tween created with the Tween tag "myTween".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: cancel tween tag “twnTag”</p>
 	</body>
 </html>

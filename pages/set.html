@@ -1,0 +1,379 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ZS Engine - Set Operations</title>
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/search.css">
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="icon" href="../assets/icon.ico" type="image/x-icon">
+	</head>
+
+	<body>
+		<!-- Create Search Bar and Theme Boxes-->
+		<div class="sidebar"></div>
+		<div class="themeBox" onclick="switchTheme()">
+			<div class="themeDot"></div>
+			<div class="themeDot" style="margin-left: 70px"></div>
+			<button class="themeBtn" id="themeSelector"></button>
+		</div>
+
+		<!-- Load JavaScript-->
+		<script src="../js/selector.js"></script>
+		<script>createSidebarContent();</script>
+		<script src="../js/searchbar.js"></script>
+		<script src="../js/theme.js"></script>
+
+		<!-- Header -->
+		<div class="headerbox">
+			<div class="header">
+				<a href="../index.html">
+					<img width="64" src="../assets/icon.ico" alt="ZS Engine Logo" draggable="false">
+					<div class="headertext">ZS Engine - ZS Script API</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- Page Info -->
+		<div class="infobox">
+			<h1>Set Operations</h1>
+			<p><b>ZS supports standard mathematical set operations using Unicode symbols with support for both Western and Orient conventions.</b></p>
+			<hr>
+
+			<h2 id="setOverview">Overview</h2>
+			<p>ZS provides built-in set operations using standard mathematical notation. Sets are represented as Lua tables, and operations are transpiled to efficient Lua code.</p>
+			<p>ZS supports <b>two mathematical conventions</b> for set symbols:</p>
+			<ul>
+				<li><b>Orient Convention (Default):</b> <code>⊂</code> = Subset (allows equality), <code>⊆</code> = Equal Subset (no equality)</li>
+				<li><b>Western Convention:</b> <code>⊂</code> = Proper Subset (no equality), <code>⊆</code> = Subset (allows equality)</li>
+			</ul>
+
+			<hr>
+
+			<h2 id="setFlags">Set Convention Flags</h2>
+			<p>You can choose which convention to use by adding flags after <code>! ZS-LUA</code>:</p>
+
+			<table>
+				<tr>
+					<th>Flag</th>
+					<th>Convention</th>
+					<th><code>⊂</code> Means</th>
+					<th><code>⊆</code> Means</th>
+				</tr>
+				<tr>
+					<td><code>! ORIENT</code> (Default)</td>
+					<td>Orient Math</td>
+					<td>Subset (allows equal)</td>
+					<td>Equal Subset (no equal)</td>
+				</tr>
+				<tr>
+					<td><code>! WESTERN</code></td>
+					<td>Western Math</td>
+					<td>Proper Subset (no equal)</td>
+					<td>Subset (allows equal)</td>
+				</tr>
+			</table>
+
+			<pre class="methodbox">! ZS-LUA
+! WESTERN
+
+onCreate:
+    -/ Use Western convention</pre>
+
+			<p><b>Note:</b> Using both <code>! WESTERN</code> and <code>! ORIENT</code> in the same script will cause a transpiler error.</p>
+
+			<hr>
+
+			<h2 id="setSymbols">Set Symbols</h2>
+			<table>
+				<tr>
+					<th>Symbol</th>
+					<th>Orient Meaning</th>
+					<th>Western Meaning</th>
+					<th>ZS Example</th>
+					<th>Lua Equivalent</th>
+				</tr>
+				<tr>
+					<td><code>∅</code></td>
+					<td>Empty Set</td>
+					<td>Empty Set</td>
+					<td><code>S = ∅</code></td>
+					<td><code>S = {}</code></td>
+				</tr>
+				<tr>
+					<td><code>∈</code></td>
+					<td>Element of</td>
+					<td>Element of</td>
+					<td><code>3 ∈ S</code></td>
+					<td><code>tableContains(S, 3)</code></td>
+				</tr>
+				<tr>
+					<td><code>∉</code></td>
+					<td>Not element of</td>
+					<td>Not element of</td>
+					<td><code>5 ∉ S</code></td>
+					<td><code>not tableContains(S, 5)</code></td>
+				</tr>
+				<tr>
+					<td><code>∩</code></td>
+					<td>Intersection</td>
+					<td>Intersection</td>
+					<td><code>A ∩ B</code></td>
+					<td><code>tableIntersection(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>∪</code></td>
+					<td>Union</td>
+					<td>Union</td>
+					<td><code>A ∪ B</code></td>
+					<td><code>tableUnion(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>\</code></td>
+					<td>Set Difference</td>
+					<td>Set Difference</td>
+					<td><code>A \ B</code></td>
+					<td><code>tableDifference(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>⊂</code></td>
+					<td>Subset (allows equal)</td>
+					<td>Proper Subset (no equal)</td>
+					<td><code>A ⊂ B</code></td>
+					<td><code>subsetEq(A, B)</code> / <code>subsetStrict(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>⊆</code></td>
+					<td>Equal Subset (no equal)</td>
+					<td>Subset (allows equal)</td>
+					<td><code>A ⊆ B</code></td>
+					<td><code>subsetStrict(A, B)</code> / <code>subsetEq(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>⊄</code></td>
+					<td>Not Subset</td>
+					<td>Not Subset</td>
+					<td><code>A ⊄ B</code></td>
+					<td><code>notSubsetEq(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>⊃</code></td>
+					<td>Superset (allows equal)</td>
+					<td>Proper Superset (no equal)</td>
+					<td><code>A ⊃ B</code></td>
+					<td><code>supersetEq(A, B)</code> / <code>supersetStrict(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>⊇</code></td>
+					<td>Equal Superset (no equal)</td>
+					<td>Superset (allows equal)</td>
+					<td><code>A ⊇ B</code></td>
+					<td><code>supersetStrict(A, B)</code> / <code>supersetEq(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>⊅</code></td>
+					<td>Not Superset</td>
+					<td>Not Superset</td>
+					<td><code>A ⊅ B</code></td>
+					<td><code>notSupersetEq(A, B)</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="setExamples">Examples</h2>
+
+			<h3>Orient Convention (Default)</h3>
+			<pre class="methodbox">! ZS-LUA
+! ORIENT
+
+onCreate:
+    change &lt;A&gt; to {1, 2, 3}
+    change &lt;B&gt; to {1, 2, 3, 4, 5}
+
+    -/ ⊂ means subset (allows equal)
+    if &lt;A&gt; ⊂ &lt;B&gt; then
+        print: “A is subset of B”
+
+    -/ ⊆ means equal subset (no equal)
+    if &lt;A&gt; ⊆ &lt;B&gt; then
+        print: “A is equal subset of B”</pre>
+
+			<h3>Western Convention</h3>
+			<pre class="methodbox">! ZS-LUA
+! WESTERN
+
+onCreate:
+    change &lt;A&gt; to {1, 2, 3}
+    change &lt;B&gt; to {1, 2, 3, 4, 5}
+
+    -/ ⊂ means proper subset (no equal)
+    if &lt;A&gt; ⊂ &lt;B&gt; then
+        print: “A is proper subset of B”
+
+    -/ ⊆ means subset (allows equal)
+    if &lt;A&gt; ⊆ &lt;B&gt; then
+        print: “A is subset of B”</pre>
+
+			<h3>Basic Set Operations</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    change &lt;A&gt; to {1, 2, 3, 4, 5}
+    change &lt;B&gt; to {4, 5, 6, 7, 8}
+
+    -/ Intersection: {4, 5}
+    change &lt;C&gt; to &lt;A&gt; ∩ &lt;B&gt;
+
+    -/ Union: {1, 2, 3, 4, 5, 6, 7, 8}
+    change &lt;D&gt; to &lt;A&gt; ∪ &lt;B&gt;
+
+    -/ Set Difference: {1, 2, 3}
+    change &lt;E&gt; to &lt;A&gt; \ &lt;B&gt;</pre>
+
+			<h3>Element Checking</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    change &lt;S&gt; to {10, 20, 30, 40, 50}
+
+    if 20 ∈ &lt;S&gt; then
+        print: “20 is in the set”
+
+    if 100 ∉ &lt;S&gt; then
+        print: “100 is not in the set”</pre>
+
+			<h3>Complex Set Operations</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    change &lt;A&gt; to {1, 2, 3, 4, 5, 6}
+    change &lt;B&gt; to {4, 5, 6, 7, 8}
+    change &lt;C&gt; to {6, 7, 8, 9, 10}
+
+    -/ (A ∩ B) ∪ C
+    change &lt;result&gt; to (&lt;A&gt; ∩ &lt;B&gt;) ∪ &lt;C&gt;
+
+    -/ (A \ B) ∩ C
+    change &lt;result2&gt; to (&lt;A&gt; \ &lt;B&gt;) ∩ &lt;C&gt;</pre>
+
+			<hr>
+
+			<h2 id="setHelperFunctions">Helper Functions</h2>
+			<p>These functions are automatically available in all ZS scripts for set operations:</p>
+
+			<table>
+				<tr>
+					<th>Function</th>
+					<th>Parameters</th>
+					<th>Return</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>tableContains</code></td>
+					<td><code>table, value</code></td>
+					<td><code>Bool</code></td>
+					<td>Check if value exists in table</td>
+				</tr>
+				<tr>
+					<td><code>tableIntersection</code></td>
+					<td><code>A, B</code></td>
+					<td><code>table</code></td>
+					<td>Returns elements in both A and B</td>
+				</tr>
+				<tr>
+					<td><code>tableUnion</code></td>
+					<td><code>A, B</code></td>
+					<td><code>table</code></td>
+					<td>Returns elements in A or B</td>
+				</tr>
+				<tr>
+					<td><code>tableDifference</code></td>
+					<td><code>A, B</code></td>
+					<td><code>table</code></td>
+					<td>Returns elements in A but not B</td>
+				</tr>
+				<tr>
+					<td><code>subsetEq</code></td>
+					<td><code>A, B</code></td>
+					<td><code>Bool</code></td>
+					<td>Checks if A is subset of B (allows equality)</td>
+				</tr>
+				<tr>
+					<td><code>subsetStrict</code></td>
+					<td><code>A, B</code></td>
+					<td><code>Bool</code></td>
+					<td>Checks if A is strict subset of B (no equality)</td>
+				</tr>
+				<tr>
+					<td><code>notSubsetEq</code></td>
+					<td><code>A, B</code></td>
+					<td><code>Bool</code></td>
+					<td>Checks if A is not subset of B</td>
+				</tr>
+				<tr>
+					<td><code>supersetEq</code></td>
+					<td><code>A, B</code></td>
+					<td><code>Bool</code></td>
+					<td>Checks if A is superset of B (allows equality)</td>
+				</tr>
+				<tr>
+					<td><code>supersetStrict</code></td>
+					<td><code>A, B</code></td>
+					<td><code>Bool</code></td>
+					<td>Checks if A is strict superset of B (no equality)</td>
+				</tr>
+				<tr>
+					<td><code>notSupersetEq</code></td>
+					<td><code>A, B</code></td>
+					<td><code>Bool</code></td>
+					<td>Checks if A is not superset of B</td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="setTranspilation">Transpilation</h2>
+			<table>
+				<tr>
+					<th>ZS</th>
+					<th>Orient (Default)</th>
+					<th>Western</th>
+				</tr>
+				<tr>
+					<td><code>&lt;A&gt; ⊂ &lt;B&gt;</code></td>
+					<td><code>subsetEq(A, B)</code></td>
+					<td><code>subsetStrict(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;A&gt; ⊆ &lt;B&gt;</code></td>
+					<td><code>subsetStrict(A, B)</code></td>
+					<td><code>subsetEq(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;A&gt; ⊄ &lt;B&gt;</code></td>
+					<td><code>notSubsetEq(A, B)</code></td>
+					<td><code>notSubsetEq(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;A&gt; ⊃ &lt;B&gt;</code></td>
+					<td><code>supersetEq(A, B)</code></td>
+					<td><code>supersetStrict(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;A&gt; ⊇ &lt;B&gt;</code></td>
+					<td><code>supersetStrict(A, B)</code></td>
+					<td><code>supersetEq(A, B)</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;A&gt; ⊅ &lt;B&gt;</code></td>
+					<td><code>notSupersetEq(A, B)</code></td>
+					<td><code>notSupersetEq(A, B)</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+	</body>
+</html>

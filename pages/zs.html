@@ -1,0 +1,276 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ZS Engine - Translations Functions</title>
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/search.css">
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="icon" href="../assets/icon.ico" type="image/x-icon">
+	</head>
+
+	<body>
+		<!-- Create Search Bar and Theme Boxes-->
+		<div class="sidebar"></div>
+		<div class="themeBox" onclick="switchTheme()">
+			<div class="themeDot"></div>
+			<div class="themeDot" style="margin-left: 70px"></div>
+			<button class="themeBtn" id="themeSelector"></button>
+		</div>
+
+		<!-- Load JavaScript-->
+		<script src="../js/selector.js"></script>
+		<script>createSidebarContent();</script>
+		<script src="../js/searchbar.js"></script>
+		<script src="../js/theme.js"></script>
+
+		<!-- Header -->
+		<div class="headerbox">
+			<div class="header">
+				<a href="../index.html">
+					<img width="64" src="../assets/icon.ico" alt="ZS Engine Logo" draggable="false">
+					<div class="headertext">ZS Engine - ZS Script API</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- Page Info -->
+		<div class="infobox">
+			<h1>ZS Language: A natural programming language</h1>
+			<p><b>A natural programming language removes barriers, no ASCII hacks, no null, no ASCII symbols. Instead, it's a part of Math. It uses Unicode symbols and uses Math rules &amp; philosophy.</b></p>
+			<hr>
+
+			<h2 id="zsOverview">What's ZS?</h2>
+			<p>ZS (Zentle Script) is a natural language scripting system designed for Psych Engine modding. It reads like English and uses mathematical symbols instead of ASCII operators. ZS scripts are transpiled to Lua and run within Psych Engine.</p>
+			<p>ZS is built on the principle that code should be <b>readable</b> and <b>accessible</b> to everyone, not just programmers. By using natural language keywords and mathematical symbols, ZS lowers the barrier to entry for mod creation.</p>
+
+			<hr>
+
+			<h2 id="zsPhilosophy">ZS's Philosophy</h2>
+			<ul>
+				<li><b>Natural Language</b> – Write code that reads like English sentences</li>
+				<li><b>Mathematical Notation</b> – Use real math symbols: <code>×</code>, <code>÷</code>, <code>−</code>, <code>≠</code>, <code>≤</code>, <code>≥</code></li>
+				<li><b>Indentation-Based Blocks</b> – No <code>end</code> clutter, just clean indentation</li>
+				<li><b>Noun Symbols</b> – Variables are wrapped in <code>&lt; &gt;</code> for clarity</li>
+				<li><b>Curly Quotes</b> – Strings use <code>“ ”</code> and <code>‘ ’</code> to avoid visual noise</li>
+				<li><b>No Unnecessary Symbols</b> – No semicolons, no parentheses for function calls, no ASCII hacks</li>
+			</ul>
+
+			<hr>
+
+			<h2 id="zsRules">ZS Rules</h2>
+			<ul>
+				<li>Every ZS file must start with <code>! ZS-LUA</code></li>
+				<li>Variables are wrapped in <code>&lt; &gt;</code>: <code>&lt;health&gt;</code></li>
+				<li>Strings use curly quotes: <code>“Hello World”</code></li>
+				<li>Subtraction uses <code>−</code>, not <code>-</code></li>
+				<li>Multiplication uses <code>×</code>, not <code>*</code></li>
+				<li>Division uses <code>÷</code>, not <code>/</code></li>
+				<li>Not equal uses <code>≠</code>, not <code>~=</code></li>
+				<li>Less than or equal uses <code>≤</code>, not <code>&lt;=</code></li>
+				<li>Greater than or equal uses <code>≥</code>, not <code>&gt;=</code></li>
+				<li>Indentation defines block structure (no <code>end</code> keywords)</li>
+				<li>Property access uses <code>read &lt;property&gt;</code></li>
+				<li>Property assignment uses <code>change &lt;property&gt; to value</code></li>
+				<li>Functions use noun syntax: <code>myFunc&lt;arg1&gt;, &lt;arg2&gt;</code></li>
+				<li>Events use colon: <code>onCreate:</code>, <code>onUpdate&lt;elapsed&gt;:</code></li>
+				<li>Print uses colon: <code>print: “text”</code></li>
+				<li>Debug print uses: <code>print(debug): “text”</code></li>
+				<li>Library calls use colon: <code>math: pi</code></li>
+				<li>Library imports: <code>import math</code> or <code>import math as m</code></li>
+				<li>Custom libraries require <code>import myLib</code></li>
+				<li>Comments use <code>-/</code> for single line</li>
+				<li>Block comments use <code>*/-</code> to open and <code>/-*</code> to close</li>
+				<li>No semicolons <code>;</code> allowed</li>
+				<li>No Lua comments <code>--</code> allowed</li>
+				<li>No straight quotes <code>"</code> or <code>'</code> allowed</li>
+				<li>No <code>function</code> keyword – use events instead</li>
+				<li>No <code>return</code> keyword – use <code>proceed</code> or <code>halt</code></li>
+				<li>No <code>nil</code> – use empty or <code>null</code></li>
+				<li>No <code>end</code> – indentation handles block closure</li>
+			</ul>
+
+			<hr>
+
+			<h2 id="zsKeywords">ZS Keywords</h2>
+			<table>
+				<tr>
+					<th>Keyword</th>
+					<th>Purpose</th>
+				</tr>
+				<tr>
+					<td><code>change &lt;prop&gt; to value</code></td>
+					<td>Set a property</td>
+				</tr>
+				<tr>
+					<td><code>read &lt;prop&gt;</code></td>
+					<td>Get a property</td>
+				</tr>
+				<tr>
+					<td><code>local &lt;name&gt; = value</code></td>
+					<td>Declare a local variable</td>
+				</tr>
+				<tr>
+					<td><code>global &lt;name&gt; = value</code></td>
+					<td>Declare a global variable</td>
+				</tr>
+				<tr>
+					<td><code>if condition then</code></td>
+					<td>Conditional statement</td>
+				</tr>
+				<tr>
+					<td><code>else if condition then</code></td>
+					<td>Else-if conditional</td>
+				</tr>
+				<tr>
+					<td><code>else</code></td>
+					<td>Else block</td>
+				</tr>
+				<tr>
+					<td><code>for &lt;var&gt; from start to stop step step do</code></td>
+					<td>For loop</td>
+				</tr>
+				<tr>
+					<td><code>while condition do</code></td>
+					<td>While loop</td>
+				</tr>
+				<tr>
+					<td><code>import library</code></td>
+					<td>Import a library</td>
+				</tr>
+				<tr>
+					<td><code>print: “text”</code></td>
+					<td>Print to console</td>
+				</tr>
+				<tr>
+					<td><code>print(debug): “text”</code></td>
+					<td>Debug print</td>
+				</tr>
+				<tr>
+					<td><code>give/give back/give nothing</code></td>
+					<td>Give nil value</td>
+				</tr>
+				<tr>
+					<td><code>give value / give back value</code></td>
+					<td>Give a value</td>
+				</tr>
+				<tr>
+					<td><code>proceed</code></td>
+					<td>Give Function_Continue</td>
+				</tr>
+				<tr>
+					<td><code>halt</code></td>
+					<td>Give Function_Stop</td>
+				</tr>
+				<tr>
+					<td><code>haltLua</code></td>
+					<td>Give Function_StopLua</td>
+				</tr>
+				<tr>
+					<td><code>haltScript</code></td>
+					<td>Give Function_StopHScript</td>
+				</tr>
+				<tr>
+					<td><code>haltAll</code></td>
+					<td>Give Function_StopAll</td>
+				</tr>
+				<tr>
+					<td><code>read length of value</code></td>
+					<td>Read length of a value</td>
+				</tr>
+			</table>
+
+			<hr>
+
+            <h2 id="zsBannedKeywordsSyntaxes">What ZS banned</h2>
+            <table>
+                <tr>
+                    <th>Banned Item</th>
+                    <th>ZS Replacement</th>
+                </tr>
+                <tr>
+                    <td><code>-</code> (hyphen for subtraction)</td>
+                    <td><code>−</code> (minus sign)</td>
+                </tr>
+                <tr>
+                    <td><code>-</code> (hyphen) is only allowed for <b>negative numbers</b></td>
+                    <td><code>-5</code>, <code>-&lt;value&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>*</code> (asterisk)</td>
+                    <td><code>×</code> (multiplication sign)</td>
+                </tr>
+                <tr>
+                    <td><code>/</code> (slash)</td>
+                    <td><code>÷</code> (division sign)</td>
+                </tr>
+                <tr>
+                    <td><code>~=</code></td>
+                    <td><code>≠</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;=</code></td>
+                    <td><code>≤</code></td>
+                </tr>
+                <tr>
+                    <td><code>&gt;=</code></td>
+                    <td><code>≥</code></td>
+                </tr>
+                <tr>
+                    <td><code>"</code> <code>'</code> (straight quotes)</td>
+                    <td><code>“ ”</code> <code>‘ ’</code> (curly quotes)</td>
+                </tr>
+                <tr>
+                    <td><code>--</code> (Lua comment)</td>
+                    <td><code>-/</code> (ZS comment)</td>
+                </tr>
+                <tr>
+                    <td><code>function</code></td>
+                    <td><code>onCreate:</code>, <code>myFunc&lt;arg&gt;:</code></td>
+                </tr>
+                <tr>
+                    <td><code>end</code></td>
+                    <td>Indentation (automatic)</td>
+                </tr>
+                <tr>
+                    <td><code>return</code></td>
+                    <td><code>give</code> or <code>give back</code></td>
+                </tr>
+                <tr>
+                    <td><code>return value</code></td>
+                    <td><code>give value</code> or <code>give back value</code></td>
+                </tr>
+                <tr>
+                    <td><code>return nil</code></td>
+                    <td><code>give nothing</code></td>
+                </tr>
+                <tr>
+                    <td><code>nil</code></td>
+                    <td>space (function arg only) or leave empty</td>
+                </tr>
+                <tr>
+                    <td><code>;</code> (semicolon)</td>
+                    <td>Not allowed</td>
+                </tr>
+                <tr>
+                    <td><code>&&</code> <code>||</code> <code>!</code></td>
+                    <td><code>and</code> <code>or</code> <code>not</code></td>
+                </tr>
+                <tr>
+                    <td><code>++</code></td>
+                    <td><code>+= 1</code> or <code>change &lt;var&gt; to read &lt;var&gt; + 1</code></td>
+                </tr>
+                <tr>
+                    <td><code>--</code> (decrement)</td>
+                    <td><code>−= 1</code> or <code>change &lt;var&gt; to read &lt;var&gt; − 1</code></td>
+                </tr>
+                <tr>
+                    <td><code>getProperty</code> <code>setProperty</code></td>
+                    <td><code>read</code> <code>change</code></td>
+                </tr>
+            </table>
+
+            <p><b>Note:</b> <code>%</code> (percent sign) is allowed as a natural symbol for modulus/percentage operations.</p>
+	</body>
+</html>

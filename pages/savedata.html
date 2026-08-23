@@ -52,6 +52,7 @@
 				<li class="exampleitem"><span class="methodexample">initSaveData('my_mod_savedata')</span> - Initializes "my_mod_savedata.sol".</li>
 			</ul>
 			<p style="color: gray">Note: Save Data does NOT save automatically! Use <a href="#flushSaveData">"flushSaveData"</a> in moderation for saving it.</p>
+			<p class="methodbox">ZS syntax: register save data “save” path “path”</p>
 			<hr>
 
 			<h2 id="flushSaveData">flushSaveData</h2>
@@ -64,6 +65,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">flushSaveData('my_mod_savedata')</span> - Saves "my_mod_savedata.sol".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: flush save data “save”</p>
 			<hr>
 
 			<h2 id="flushSaveData">eraseSaveData</h2>
@@ -76,6 +78,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">eraseSaveData('my_mod_savedata')</span> - Erases "my_mod_savedata.sol".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: erase save data “save”</p>
 			<hr>
 
 			<h2 id="getDataFromSave">getDataFromSave</h2>
@@ -90,6 +93,7 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">getDataFromSave('my_mod_savedata', 'score', 0)</span> - Returns "score" from "my_mod_savedata.sol", in case it's missing, it will use 0.</li>
 			</ul>
+			<p class="methodbox">ZS syntax: read save data “save” property “property” value [value]</p>
 			<hr>
 
 			<h2 id="setDataFromSave">setDataFromSave</h2>
@@ -104,5 +108,6 @@
 			<ul class="methoddiv">
 				<li class="exampleitem"><span class="methodexample">setDataFromSave('my_mod_savedata', 'score', 1000)</span> - Saves "score" to "my_mod_savedata.sol".</li>
 			</ul>
+			<p class="methodbox">ZS syntax: change save data “save” property “property” value [value]</p>
 	</body>
 </html>
