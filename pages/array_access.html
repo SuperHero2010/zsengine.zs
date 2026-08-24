@@ -1,0 +1,189 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ZS Engine - Array Access</title>
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/search.css">
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="icon" href="../assets/icon.ico" type="image/x-icon">
+	</head>
+
+	<body>
+		<!-- Create Search Bar and Theme Boxes-->
+		<div class="sidebar"></div>
+		<div class="themeBox" onclick="switchTheme()">
+			<div class="themeDot"></div>
+			<div class="themeDot" style="margin-left: 70px"></div>
+			<button class="themeBtn" id="themeSelector"></button>
+		</div>
+
+		<!-- Load JavaScript-->
+		<script src="../js/selector.js"></script>
+		<script>createSidebarContent();</script>
+		<script src="../js/searchbar.js"></script>
+		<script src="../js/theme.js"></script>
+
+		<!-- Header -->
+		<div class="headerbox">
+			<div class="header">
+				<a href="../index.html">
+					<img width="64" src="../assets/icon.ico" alt="ZS Engine Logo" draggable="false">
+					<div class="headertext">ZS Engine - ZS Script API</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- Page Info -->
+		<div class="infobox">
+			<h1>Array Access</h1>
+			<p><b>ZS provides natural language array access using <code>of</code> and <code>and</code> keywords.</b></p>
+			<hr>
+
+			<h2 id="overview">Overview</h2>
+			<p>ZS uses <b>natural language</b> for array access instead of bracket notation <code>[]</code>. The keywords <code>of</code> and <code>and</code> make array operations read like English sentences.</p>
+
+			<hr>
+
+			<h2 id="syntax">Syntax</h2>
+
+			<table>
+				<tr>
+					<th>ZS Syntax</th>
+					<th>Lua Equivalent</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>&lt;index&gt; of &lt;array&gt;</code></td>
+					<td><code>array[index]</code></td>
+					<td>Single index access</td>
+				</tr>
+				<tr>
+					<td><code>&lt;index1&gt; of &lt;index2&gt; of &lt;array&gt;</code></td>
+					<td><code>array[index2][index1]</code></td>
+					<td>Nested access (right-associative)</td>
+				</tr>
+				<tr>
+					<td><code>&lt;index1&gt; and &lt;index2&gt; of &lt;array&gt;</code></td>
+					<td><code>array[index2][index1]</code></td>
+					<td>Multi-dimensional access</td>
+				</tr>
+				<tr>
+					<td><code>&lt;a&gt; of &lt;f&gt; and &lt;b&gt; of &lt;g&gt;</code></td>
+					<td><code>g[b][f[a]]</code></td>
+					<td>Mixed nested and multi-dimensional</td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="examples">Examples</h2>
+
+			<h3>Single Index</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;list&gt; = {10, 20, 30, 40, 50}
+    local &lt;first&gt; = &lt;1&gt; of &lt;list&gt;
+    -/ first = 10</pre>
+
+			<h3>Nested Arrays</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;matrix&gt; = {{1, 2}, {3, 4}, {5, 6}}
+    local &lt;value&gt; = &lt;1&gt; of &lt;2&gt; of &lt;matrix&gt;
+    -/ value = matrix[2][1] = 3</pre>
+
+			<h3>Multi-Dimensional Access</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;cube&gt; = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}}
+    local &lt;value&gt; = &lt;1&gt; and &lt;2&gt; of &lt;cube&gt;
+    -/ value = cube[2][1]</pre>
+
+			<h3>Mixed Nested and Multi-Dimensional</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;A&gt; = {10, 20, 30}
+    local &lt;B&gt; = {40, 50, 60}
+    local &lt;M&gt; = {&lt;A&gt;, &lt;B&gt;}
+    local &lt;result&gt; = &lt;2&gt; of &lt;A&gt; and &lt;1&gt; of &lt;M&gt;
+    -/ result = M[1][A[2]] = 30</pre>
+
+			<h3>Loop with Array Access</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;list&gt; = {10, 20, 30, 40, 50}
+    local &lt;sum&gt; = 0
+    for &lt;i&gt; from 1 = 5 do
+        change &lt;sum&gt; to &lt;sum&gt; + &lt;i&gt; of &lt;list&gt;
+    print: “Sum is ” + read &lt;sum&gt;</pre>
+
+			<hr>
+
+			<h2 id="rules">Rules</h2>
+
+			<table>
+				<tr>
+					<th>Rule</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>of</code> is right-associative</td>
+					<td><code>&lt;i&gt; of &lt;a&gt; of &lt;f&gt;</code> → <code>f[a[i]]</code></td>
+				</tr>
+				<tr>
+					<td><code>and</code> separates indices</td>
+					<td><code>&lt;i&gt; and &lt;j&gt; of &lt;k&gt;</code> → <code>k[j][i]</code></td>
+				</tr>
+				<tr>
+					<td>Indices are 1-based</td>
+					<td>Lua tables are 1-based by default</td>
+				</tr>
+				<tr>
+					<td>Nouns must be declared</td>
+					<td>Use <code>local</code>, <code>global</code>, or <code>change</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="transpilation">Transpilation</h2>
+
+			<table>
+				<tr>
+					<th>ZS</th>
+					<th>Lua</th>
+				</tr>
+				<tr>
+					<td><code>&lt;i&gt; of &lt;list&gt;</code></td>
+					<td><code>list[i]</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;i&gt; of &lt;a&gt; of &lt;f&gt;</code></td>
+					<td><code>f[a[i]]</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;i&gt; and &lt;j&gt; of &lt;k&gt;</code></td>
+					<td><code>k[j][i]</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;a&gt; of &lt;f&gt; and &lt;b&gt; of &lt;g&gt;</code></td>
+					<td><code>g[b][f[a]]</code></td>
+				</tr>
+				<tr>
+					<td><code>&lt;a&gt; and &lt;m&gt; of &lt;f&gt; and &lt;b&gt; and &lt;n&gt; of &lt;g&gt;</code></td>
+					<td><code>g[n][b][f[m]][a]</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+		</div>
+	</body>
+</html>
