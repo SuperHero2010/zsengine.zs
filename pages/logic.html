@@ -1,0 +1,245 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ZS Engine - Logic Operators</title>
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/search.css">
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="icon" href="../assets/icon.ico" type="image/x-icon">
+	</head>
+
+	<body>
+		<!-- Create Search Bar and Theme Boxes-->
+		<div class="sidebar"></div>
+		<div class="themeBox" onclick="switchTheme()">
+			<div class="themeDot"></div>
+			<div class="themeDot" style="margin-left: 70px"></div>
+			<button class="themeBtn" id="themeSelector"></button>
+		</div>
+
+		<!-- Load JavaScript-->
+		<script src="../js/selector.js"></script>
+		<script>createSidebarContent();</script>
+		<script src="../js/searchbar.js"></script>
+		<script src="../js/theme.js"></script>
+
+		<!-- Header -->
+		<div class="headerbox">
+			<div class="header">
+				<a href="../index.html">
+					<img width="64" src="../assets/icon.ico" alt="ZS Engine Logo" draggable="false">
+					<div class="headertext">ZS Engine - ZS Script API</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- Page Info -->
+		<div class="infobox">
+			<h1>Logic Operators</h1>
+			<p><b>ZS uses mathematical logic symbols for clean, unambiguous logic operations.</b></p>
+			<hr>
+
+			<h2 id="overview">Overview</h2>
+			<p>ZS uses <b>Unicode logic symbols</b> instead of English keywords to avoid ambiguity. The <code>and</code> keyword is reserved for array access only.</p>
+
+			<hr>
+
+			<h2 id="operators">Logic Operators</h2>
+			<table>
+				<tr>
+					<th>Symbol</th>
+					<th>Name</th>
+					<th>ZS Example</th>
+					<th>Lua Equivalent</th>
+				</tr>
+				<tr>
+					<td><code>∧</code></td>
+					<td>Logical AND</td>
+					<td><code>if &lt;x&gt; &gt; 0 ∧ &lt;x&gt; &lt; 10 then</code></td>
+					<td><code>if x &gt; 0 and x &lt; 10 then</code></td>
+				</tr>
+				<tr>
+					<td><code>∨</code></td>
+					<td>Logical OR</td>
+					<td><code>if &lt;x&gt; &lt; 0 ∨ &lt;x&gt; &gt; 10 then</code></td>
+					<td><code>if x &lt; 0 or x &gt; 10 then</code></td>
+				</tr>
+				<tr>
+					<td><code>¬</code></td>
+					<td>Logical NOT</td>
+					<td><code>if ¬&lt;alive&gt; then</code></td>
+					<td><code>if not alive then</code></td>
+				</tr>
+				<tr>
+					<td><code>∀</code></td>
+					<td>For All</td>
+					<td><code>∀ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 0</code></td>
+					<td><code>forAll(list, function(i) return i &gt; 0 end)</code></td>
+				</tr>
+				<tr>
+					<td><code>∃</code></td>
+					<td>Exists</td>
+					<td><code>∃ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 5</code></td>
+					<td><code>exists(list, function(i) return i &gt; 5 end)</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="rules">Rules</h2>
+
+			<table>
+				<tr>
+					<th>Rule</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>and</code> is array separator only</td>
+					<td><code>&lt;i&gt; and &lt;j&gt; of &lt;matrix&gt;</code> → <code>matrix[j][i]</code></td>
+				</tr>
+				<tr>
+					<td><code>∧</code> is logical AND</td>
+					<td><code>if &lt;x&gt; &gt; 0 ∧ &lt;x&gt; &lt; 10 then</code></td>
+				</tr>
+				<tr>
+					<td><code>∨</code> is logical OR</td>
+					<td><code>if &lt;x&gt; &lt; 0 ∨ &lt;x&gt; &gt; 10 then</code></td>
+				</tr>
+				<tr>
+					<td><code>¬</code> is logical NOT</td>
+					<td><code>if ¬&lt;alive&gt; then</code></td>
+				</tr>
+				<tr>
+					<td><code>∀</code> is For All</td>
+					<td><code>∀ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 0</code></td>
+				</tr>
+				<tr>
+					<td><code>∃</code> is Exists</td>
+					<td><code>∃ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 5</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="examples">Examples</h2>
+
+			<h3>Logical AND</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;x&gt; = 5
+    if &lt;x&gt; &gt; 0 ∧ &lt;x&gt; &lt; 10 then
+        print: “x is between 1 and 9”</pre>
+
+			<h3>Logical OR</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;x&gt; = -5
+    if &lt;x&gt; &lt; 0 ∨ &lt;x&gt; &gt; 10 then
+        print: “x is outside 0-10”</pre>
+
+			<h3>Logical NOT</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;alive&gt; = true
+    if ¬&lt;alive&gt; then
+        print: “Player is dead”
+    else
+        print: “Player is alive”</pre>
+
+			<h3>For All</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;list&gt; = {1, 2, 3, 4, 5}
+    if ∀ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 0 then
+        print: “All elements are positive”</pre>
+
+			<h3>Exists</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;list&gt; = {1, 2, 3, 4, 5}
+    if ∃ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 5 then
+        print: “There is an element greater than 5”</pre>
+
+			<h3>Combined Logic</h3>
+			<pre class="methodbox">! ZS-LUA
+
+onCreate:
+    local &lt;health&gt; = 75
+    local &lt;shield&gt; = 20
+    if &lt;health&gt; &gt; 0 ∧ &lt;shield&gt; &gt; 0 then
+        print: “Player is protected”
+    else if &lt;health&gt; &lt; 50 ∨ &lt;shield&gt; &lt; 10 then
+        print: “Player is vulnerable”
+    else
+        print: “Player is healthy”</pre>
+
+			<hr>
+
+			<h2 id="transpilation">Transpilation</h2>
+
+			<table>
+				<tr>
+					<th>ZS</th>
+					<th>Lua</th>
+				</tr>
+				<tr>
+					<td><code>∧</code></td>
+					<td><code>and</code></td>
+				</tr>
+				<tr>
+					<td><code>∨</code></td>
+					<td><code>or</code></td>
+				</tr>
+				<tr>
+					<td><code>¬</code></td>
+					<td><code>not</code></td>
+				</tr>
+				<tr>
+					<td><code>∀ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 0</code></td>
+					<td><code>forAll(list, function(i) return i &gt; 0 end)</code></td>
+				</tr>
+				<tr>
+					<td><code>∃ &lt;i&gt; in &lt;list&gt; where &lt;i&gt; &gt; 5</code></td>
+					<td><code>exists(list, function(i) return i &gt; 5 end)</code></td>
+				</tr>
+			</table>
+
+			<hr>
+
+			<h2 id="validation">Validation</h2>
+
+			<table>
+				<tr>
+					<th>Input</th>
+					<th>Status</th>
+					<th>Reason</th>
+				</tr>
+				<tr>
+					<td><code>if &lt;x&gt; &gt; 0 and &lt;x&gt; &lt; 10 then</code></td>
+					<td>❌ Error</td>
+					<td>Use <code>∧</code> instead of <code>and</code></td>
+				</tr>
+				<tr>
+					<td><code>if &lt;x&gt; &gt; 0 ∧ &lt;x&gt; &lt; 10 then</code></td>
+					<td>✅ Valid</td>
+					<td>Logical AND</td>
+				</tr>
+				<tr>
+					<td><code>&lt;i&gt; and &lt;j&gt; of &lt;matrix&gt;</code></td>
+					<td>✅ Valid</td>
+					<td>Array separator</td>
+				</tr>
+			</table>
+
+			<hr>
+
+		</div>
+	</body>
+</html>
